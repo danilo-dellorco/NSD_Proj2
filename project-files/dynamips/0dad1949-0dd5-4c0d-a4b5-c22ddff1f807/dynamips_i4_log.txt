@@ -1,0 +1,31 @@
+Dec 22 11:10:55.519 HYPERVISOR: Release 0.2.22-amd64/Linux (tag 2022052400)
+Dec 22 11:10:55.520 HYPERVISOR: Started on IP = localhost, TCP port = 47757.
+Dec 22 11:10:55.525 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 22 11:10:55.526 HYPERVISOR: exec_cmd: hypervisor working_dir /home/mich/Documents/Università/NSD/Labs/09. Cisco/untitled/project-files/dynamips 
+Dec 22 11:10:55.526 GENERAL: working_dir=/home/mich/Documents/Università/NSD/Labs/09. Cisco/untitled/project-files/dynamips
+Dec 22 11:10:55.526 HYPERVISOR: exec_cmd: hypervisor working_dir /home/mich/Documents/Università/NSD/Labs/09. Cisco/untitled/project-files/dynamips/24ac6175-c400-4bb0-b230-890da0f9284c 
+Dec 22 11:10:55.527 GENERAL: working_dir=/home/mich/Documents/Università/NSD/Labs/09. Cisco/untitled/project-files/dynamips/24ac6175-c400-4bb0-b230-890da0f9284c
+Dec 22 11:10:55.527 HYPERVISOR: exec_cmd: vm create R1 1 c7200 
+Dec 22 11:10:55.527 VM: VM R1 created.
+Dec 22 11:10:55.528 HYPERVISOR: exec_cmd: vm set_con_tcp_port R1 5000 
+Dec 22 11:10:55.529 HYPERVISOR: exec_cmd: c7200 get_mac_addr R1 
+Dec 22 11:10:55.529 HYPERVISOR: exec_cmd: vm get_status R1 
+Dec 22 11:10:55.530 HYPERVISOR: exec_cmd: vm slot_add_binding R1 0 0 C7200-IO-FE 
+Dec 22 11:10:55.531 HYPERVISOR: exec_cmd: vm set_ios R1 /home/mich/GNS3/images/IOS/c7200-adventerprisek9-mz.124-24.T5.image 
+Dec 22 11:10:55.532 HYPERVISOR: exec_cmd: vm get_status R1 
+Dec 22 11:10:55.533 HYPERVISOR: exec_cmd: vm set_idle_pc R1 0x606e0000 
+Dec 22 11:10:55.533 HYPERVISOR: exec_cmd: vm set_nvram R1 512 
+Dec 22 11:10:55.534 HYPERVISOR: exec_cmd: vm set_disk0 R1 0 
+Dec 22 11:10:55.535 HYPERVISOR: exec_cmd: vm get_status R1 
+Dec 22 11:10:55.536 HYPERVISOR: exec_cmd: vm slot_add_binding R1 1 0 PA-GE 
+Dec 22 11:10:55.537 HYPERVISOR: exec_cmd: vm get_status R1 
+Dec 22 11:10:55.538 HYPERVISOR: exec_cmd: vm slot_add_binding R1 2 0 PA-GE 
+Dec 22 11:10:55.538 HYPERVISOR: exec_cmd: vm get_status R1 
+Dec 22 11:10:55.539 HYPERVISOR: exec_cmd: vm slot_add_binding R1 3 0 PA-GE 
+Dec 22 11:10:55.540 HYPERVISOR: exec_cmd: vm get_status R1 
+Dec 22 11:10:55.540 HYPERVISOR: exec_cmd: vm slot_add_binding R1 4 0 PA-GE 
+Dec 22 11:10:55.541 HYPERVISOR: exec_cmd: vm get_status R1 
+Dec 22 11:10:55.541 HYPERVISOR: exec_cmd: vm slot_add_binding R1 5 0 PA-GE 
+Dec 22 11:10:55.638 HYPERVISOR: exec_cmd: vm set_ios R1 /home/mich/GNS3/images/IOS/c7200-adventerprisek9-mz.124-24.T5.image 
+Dec 22 11:11:27.483 HYPERVISOR: exec_cmd: vm set_ios R1 /home/mich/GNS3/images/IOS/c7200-adventerprisek9-mz.124-24.T5.image 
+Dec 22 11:11:46.936 HYPERVISOR: exec_cmd: vm set_ios R1 /home/mich/GNS3/images/IOS/c7200-adventerprisek9-mz.124-24.T5.image 
