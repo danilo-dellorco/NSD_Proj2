@@ -185,7 +185,7 @@
             },
             {
                 "filters": {},
-                "link_id": "5f35bab6-364a-4432-972e-84ce444b7ab1",
+                "link_id": "39216488-c397-47b7-9061-e30707e3db92",
                 "link_style": {},
                 "nodes": [
                     {
@@ -194,10 +194,10 @@
                             "rotation": 0,
                             "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                             "text": "swp1",
-                            "x": 34,
+                            "x": 32,
                             "y": 69
                         },
-                        "node_id": "91937b7c-20ed-4ef4-871c-eef759aa00e8",
+                        "node_id": "4342d710-2c93-47b9-8614-d8bb83770da8",
                         "port_number": 0
                     },
                     {
@@ -206,7 +206,7 @@
                             "rotation": 0,
                             "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                             "text": "g2/0",
-                            "x": 31,
+                            "x": 32,
                             "y": -17
                         },
                         "node_id": "b90748c6-4ce5-4e18-a5f6-4c6ac8ba7ade",
@@ -495,74 +495,6 @@
             },
             {
                 "compute_id": "local",
-                "console": null,
-                "console_auto_start": false,
-                "console_type": "none",
-                "custom_adapters": [
-                    {
-                        "adapter_number": 1,
-                        "port_name": "swp1"
-                    },
-                    {
-                        "adapter_number": 2,
-                        "port_name": "swp2"
-                    },
-                    {
-                        "adapter_number": 3,
-                        "port_name": "swp3"
-                    },
-                    {
-                        "adapter_number": 4,
-                        "port_name": "swp4"
-                    },
-                    {
-                        "adapter_number": 5,
-                        "port_name": "swp5"
-                    },
-                    {
-                        "adapter_number": 6,
-                        "port_name": "swp6"
-                    },
-                    {
-                        "adapter_number": 7,
-                        "port_name": "swp7"
-                    }
-                ],
-                "first_port_name": "mgmt",
-                "height": 59,
-                "label": {
-                    "rotation": 0,
-                    "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
-                    "text": "CE-A1",
-                    "x": 7,
-                    "y": -25
-                },
-                "locked": false,
-                "name": "CE-A1",
-                "node_id": "91937b7c-20ed-4ef4-871c-eef759aa00e8",
-                "node_type": "virtualbox",
-                "port_name_format": "swp{0}",
-                "port_segment_size": 0,
-                "properties": {
-                    "adapter_type": "Paravirtualized Network (virtio-net)",
-                    "adapters": 8,
-                    "headless": false,
-                    "linked_clone": false,
-                    "on_close": "power_off",
-                    "ram": 1024,
-                    "usage": "",
-                    "use_any_adapter": true,
-                    "vmname": "cumulus Clone"
-                },
-                "symbol": ":/symbols/vbox_guest.svg",
-                "template_id": "93f8e4af-fa37-423b-a24a-5ecbfc90fabe",
-                "width": 65,
-                "x": 2,
-                "y": -358,
-                "z": 1
-            },
-            {
-                "compute_id": "local",
                 "console": 5004,
                 "console_auto_start": false,
                 "console_type": "telnet",
@@ -628,6 +560,78 @@
                 "width": 66,
                 "x": -470,
                 "y": -74,
+                "z": 1
+            },
+            {
+                "compute_id": "local",
+                "console": null,
+                "console_auto_start": false,
+                "console_type": "none",
+                "custom_adapters": [
+                    {
+                        "adapter_number": 0,
+                        "port_name": "mgmt"
+                    },
+                    {
+                        "adapter_number": 1,
+                        "port_name": "swp1"
+                    },
+                    {
+                        "adapter_number": 2,
+                        "port_name": "swp2"
+                    },
+                    {
+                        "adapter_number": 3,
+                        "port_name": "swp3"
+                    },
+                    {
+                        "adapter_number": 4,
+                        "port_name": "swp4"
+                    },
+                    {
+                        "adapter_number": 5,
+                        "port_name": "swp5"
+                    },
+                    {
+                        "adapter_number": 6,
+                        "port_name": "swp6"
+                    },
+                    {
+                        "adapter_number": 7,
+                        "port_name": "swp7"
+                    }
+                ],
+                "first_port_name": "",
+                "height": 59,
+                "label": {
+                    "rotation": 0,
+                    "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                    "text": "CE-A1",
+                    "x": 7,
+                    "y": -25
+                },
+                "locked": false,
+                "name": "CE-A1",
+                "node_id": "4342d710-2c93-47b9-8614-d8bb83770da8",
+                "node_type": "virtualbox",
+                "port_name_format": "swp{0}",
+                "port_segment_size": 0,
+                "properties": {
+                    "adapter_type": "Paravirtualized Network (virtio-net)",
+                    "adapters": 8,
+                    "headless": false,
+                    "linked_clone": false,
+                    "on_close": "power_off",
+                    "ram": 1024,
+                    "usage": "",
+                    "use_any_adapter": true,
+                    "vmname": "cumulus-proj"
+                },
+                "symbol": ":/symbols/vbox_guest.svg",
+                "template_id": "771e058d-c1a0-4be9-90ab-c98bf556b228",
+                "width": 65,
+                "x": -1,
+                "y": -353,
                 "z": 1
             }
         ]
