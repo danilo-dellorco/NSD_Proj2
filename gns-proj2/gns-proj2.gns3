@@ -153,19 +153,10 @@
                 "z": 2
             },
             {
-                "drawing_id": "64ab9874-136f-4381-8cc7-2b06c5227b40",
-                "locked": true,
-                "rotation": 0,
-                "svg": "<svg width=\"126\" height=\"25\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">lo0 2.255.0.1/30</text></svg>",
-                "x": -582,
-                "y": -59,
-                "z": 2
-            },
-            {
                 "drawing_id": "f79052e1-7a80-404f-b014-7a41284b0bea",
                 "locked": true,
                 "rotation": 0,
-                "svg": "<svg width=\"126\" height=\"25\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">lo0 1.255.0.1/30</text></svg>",
+                "svg": "<svg width=\"108\" height=\"25\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">lo0 1.1.1.1/32</text></svg>",
                 "x": -301,
                 "y": 9,
                 "z": 2
@@ -174,7 +165,7 @@
                 "drawing_id": "a3d92699-785b-4f9b-b74b-a581dcc427d9",
                 "locked": true,
                 "rotation": 0,
-                "svg": "<svg width=\"126\" height=\"25\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">lo0 1.255.0.2/30</text></svg>",
+                "svg": "<svg width=\"108\" height=\"25\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">lo0 2.2.2.2/32</text></svg>",
                 "x": 69,
                 "y": -180,
                 "z": 2
@@ -183,7 +174,7 @@
                 "drawing_id": "fd2f9216-2cef-4feb-98b0-0fe72b8f2004",
                 "locked": true,
                 "rotation": 0,
-                "svg": "<svg width=\"126\" height=\"25\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">lo0 1.255.0.3/30</text></svg>",
+                "svg": "<svg width=\"108\" height=\"25\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">lo0 3.3.3.3/32</text></svg>",
                 "x": 281,
                 "y": 42,
                 "z": 2
@@ -192,7 +183,7 @@
                 "drawing_id": "ffa199ad-9cfb-4789-a08c-48c4e7c5c3b5",
                 "locked": false,
                 "rotation": 0,
-                "svg": "<svg width=\"126\" height=\"25\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">lo0 1.255.0.4/30</text></svg>",
+                "svg": "<svg width=\"108\" height=\"25\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">lo0 4.4.4.4/32</text></svg>",
                 "x": -34,
                 "y": 3,
                 "z": 2
@@ -322,6 +313,38 @@
                             "y": 14
                         },
                         "node_id": "c71daad8-4a3e-4125-8efc-0cdecef72ddb",
+                        "port_number": 0
+                    }
+                ],
+                "suspend": false
+            },
+            {
+                "filters": {},
+                "link_id": "4ee81161-e3e5-4d4d-a22f-fb81e8d475d1",
+                "link_style": {},
+                "nodes": [
+                    {
+                        "adapter_number": 1,
+                        "label": {
+                            "rotation": 0,
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "text": "swp1",
+                            "x": 32,
+                            "y": 69
+                        },
+                        "node_id": "ec412ee6-1f3a-4e44-b260-da076b3cb6de",
+                        "port_number": 0
+                    },
+                    {
+                        "adapter_number": 2,
+                        "label": {
+                            "rotation": 0,
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "text": "g2/0",
+                            "x": 32,
+                            "y": -17
+                        },
+                        "node_id": "02884039-03a9-4474-bda5-8b38e18d2bee",
                         "port_number": 0
                     }
                 ],
@@ -672,6 +695,50 @@
                 "width": 66,
                 "x": 278,
                 "y": 1,
+                "z": 1
+            },
+            {
+                "compute_id": "local",
+                "console": null,
+                "console_auto_start": false,
+                "console_type": "none",
+                "custom_adapters": [
+                    {
+                        "adapter_number": 0,
+                        "port_name": "mgmt"
+                    }
+                ],
+                "first_port_name": "",
+                "height": 59,
+                "label": {
+                    "rotation": 0,
+                    "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                    "text": "CE-A1",
+                    "x": 7,
+                    "y": -25
+                },
+                "locked": true,
+                "name": "CE-A1",
+                "node_id": "ec412ee6-1f3a-4e44-b260-da076b3cb6de",
+                "node_type": "virtualbox",
+                "port_name_format": "swp{0}",
+                "port_segment_size": 0,
+                "properties": {
+                    "adapter_type": "Paravirtualized Network (virtio-net)",
+                    "adapters": 8,
+                    "headless": false,
+                    "linked_clone": false,
+                    "on_close": "power_off",
+                    "ram": 1024,
+                    "usage": "",
+                    "use_any_adapter": false,
+                    "vmname": "cumulus-proj"
+                },
+                "symbol": ":/symbols/vbox_guest.svg",
+                "template_id": "2ebe2114-1aa3-46d3-a365-f590d8668245",
+                "width": 65,
+                "x": 3,
+                "y": -352,
                 "z": 1
             }
         ]
