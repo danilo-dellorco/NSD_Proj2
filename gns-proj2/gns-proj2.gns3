@@ -174,7 +174,7 @@
                 "drawing_id": "a3d92699-785b-4f9b-b74b-a581dcc427d9",
                 "locked": true,
                 "rotation": 0,
-                "svg": "<svg width=\"108\" height=\"25\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">lo0 2.2.2.2/32</text></svg>",
+                "svg": "<svg width=\"108\" height=\"25\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">lo0 1.1.1.2/32</text></svg>",
                 "x": 69,
                 "y": -180,
                 "z": 2
@@ -183,7 +183,7 @@
                 "drawing_id": "fd2f9216-2cef-4feb-98b0-0fe72b8f2004",
                 "locked": true,
                 "rotation": 0,
-                "svg": "<svg width=\"108\" height=\"25\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">lo0 3.3.3.3/32</text></svg>",
+                "svg": "<svg width=\"108\" height=\"25\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">lo0 1.1.1.3/32</text></svg>",
                 "x": 281,
                 "y": 42,
                 "z": 2
@@ -192,9 +192,18 @@
                 "drawing_id": "ffa199ad-9cfb-4789-a08c-48c4e7c5c3b5",
                 "locked": false,
                 "rotation": 0,
-                "svg": "<svg width=\"108\" height=\"25\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">lo0 4.4.4.4/32</text></svg>",
+                "svg": "<svg width=\"108\" height=\"25\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">lo0 1.1.1.4/32</text></svg>",
                 "x": -34,
                 "y": 3,
+                "z": 2
+            },
+            {
+                "drawing_id": "66643469-8158-4aa3-8568-bded06d68360",
+                "locked": true,
+                "rotation": 0,
+                "svg": "<svg width=\"108\" height=\"25\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">lo0 2.1.1.1/32</text></svg>",
+                "x": -566,
+                "y": -57,
                 "z": 2
             }
         ],
