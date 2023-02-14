@@ -18,8 +18,6 @@
         "computes": [],
         "drawings": [
             {
-<<<<<<< HEAD
-=======
                 "drawing_id": "bcaa5347-69cb-4dde-a415-a6985288f123",
                 "locked": false,
                 "rotation": 0,
@@ -29,7 +27,6 @@
                 "z": 0
             },
             {
->>>>>>> d46ce9a (BGP/MPLS VPN configured)
                 "drawing_id": "c2691da3-bab0-4d35-a3b3-990dc4c9540c",
                 "locked": false,
                 "rotation": 0,
@@ -43,13 +40,8 @@
                 "locked": false,
                 "rotation": 0,
                 "svg": "<svg width=\"352.0\" height=\"200.0\"><ellipse cx=\"176\" rx=\"176\" cy=\"100\" ry=\"100\" fill=\"#ffffff\" fill-opacity=\"1.0\" stroke-width=\"2\" stroke=\"#000000\" /></svg>",
-<<<<<<< HEAD
-                "x": -763,
-                "y": -107,
-=======
                 "x": -771,
                 "y": -147,
->>>>>>> d46ce9a (BGP/MPLS VPN configured)
                 "z": 0
             },
             {
@@ -57,13 +49,8 @@
                 "locked": false,
                 "rotation": 0,
                 "svg": "<svg width=\"72\" height=\"42\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">AS200\n2.0.0.0/8</text></svg>",
-<<<<<<< HEAD
-                "x": -623,
-                "y": -101,
-=======
                 "x": -622,
                 "y": -138,
->>>>>>> d46ce9a (BGP/MPLS VPN configured)
                 "z": 2
             },
             {
