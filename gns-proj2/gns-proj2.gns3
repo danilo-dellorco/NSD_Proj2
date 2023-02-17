@@ -369,21 +369,39 @@
                 "z": 2
             },
             {
-                "drawing_id": "427c0a4a-ed74-4207-bd4f-a96952112e01",
-                "locked": false,
-                "rotation": 0,
-                "svg": "<svg width=\"304.0\" height=\"240.0\"><ellipse cx=\"152\" rx=\"152\" cy=\"120\" ry=\"120\" fill=\"#ffffff\" fill-opacity=\"1.0\" stroke-width=\"2\" stroke=\"#000000\" /></svg>",
-                "x": -110,
-                "y": -562,
-                "z": 0
-            },
-            {
                 "drawing_id": "723f79a4-00f0-4a83-9c12-74136ffc659f",
                 "locked": false,
                 "rotation": 0,
                 "svg": "<svg width=\"21\" height=\"25\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">.1</text></svg>",
                 "x": -8,
                 "y": -373,
+                "z": 2
+            },
+            {
+                "drawing_id": "079c655c-c969-4d89-baff-379dc8b5f9d9",
+                "locked": true,
+                "rotation": 0,
+                "svg": "<svg width=\"328.0\" height=\"234.0\"><ellipse cx=\"164\" rx=\"164\" cy=\"117\" ry=\"117\" fill=\"#ffffff\" fill-opacity=\"1.0\" stroke-width=\"2\" stroke=\"#000000\" /></svg>",
+                "x": -126,
+                "y": -564,
+                "z": 0
+            },
+            {
+                "drawing_id": "1da4c441-4f66-472e-83d8-4083b14c4e7b",
+                "locked": false,
+                "rotation": 0,
+                "svg": "<svg width=\"21\" height=\"25\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">.2</text></svg>",
+                "x": -76,
+                "y": -467,
+                "z": 2
+            },
+            {
+                "drawing_id": "16611361-12c4-4ca3-9302-9b8405aa2bce",
+                "locked": false,
+                "rotation": 0,
+                "svg": "<svg width=\"21\" height=\"25\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">.2</text></svg>",
+                "x": 640,
+                "y": -41,
                 "z": 2
             }
         ],
@@ -671,6 +689,70 @@
                             "y": 17
                         },
                         "node_id": "37d7109f-93e5-4adc-a898-1e8c87999f85",
+                        "port_number": 0
+                    }
+                ],
+                "suspend": false
+            },
+            {
+                "filters": {},
+                "link_id": "b1d33b80-2859-47b1-ba86-a1a54a81cc8a",
+                "link_style": {},
+                "nodes": [
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "rotation": 0,
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "text": "e0",
+                            "x": 71,
+                            "y": 20
+                        },
+                        "node_id": "5a3b1536-e17f-4b8e-a9ba-709788feef23",
+                        "port_number": 0
+                    },
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "rotation": 0,
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "text": "e1",
+                            "x": -3,
+                            "y": 24
+                        },
+                        "node_id": "09daeb3f-c9d2-4679-be98-a051b1a9cc39",
+                        "port_number": 1
+                    }
+                ],
+                "suspend": false
+            },
+            {
+                "filters": {},
+                "link_id": "acd64bf0-f1dd-4ce4-8502-2ae503e169b8",
+                "link_style": {},
+                "nodes": [
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "rotation": 0,
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "text": "e1",
+                            "x": 36,
+                            "y": 55
+                        },
+                        "node_id": "37d7109f-93e5-4adc-a898-1e8c87999f85",
+                        "port_number": 1
+                    },
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "rotation": 0,
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "text": "e0",
+                            "x": 31,
+                            "y": -10
+                        },
+                        "node_id": "57ecd132-1ccc-4615-b73f-be059f6f7bcd",
                         "port_number": 0
                     }
                 ],
@@ -1256,7 +1338,7 @@
                 "template_id": "1966b864-93e7-32d5-965f-001384eec461",
                 "width": 72,
                 "x": 2,
-                "y": -464,
+                "y": -470,
                 "z": 1
             },
             {
@@ -1337,6 +1419,84 @@
                 "width": 72,
                 "x": 598,
                 "y": -134,
+                "z": 1
+            },
+            {
+                "compute_id": "local",
+                "console": null,
+                "console_auto_start": false,
+                "console_type": "none",
+                "custom_adapters": [],
+                "first_port_name": "",
+                "height": 59,
+                "label": {
+                    "rotation": 0,
+                    "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                    "text": "hostA1",
+                    "x": 2,
+                    "y": -25
+                },
+                "locked": false,
+                "name": "hostA1",
+                "node_id": "5a3b1536-e17f-4b8e-a9ba-709788feef23",
+                "node_type": "virtualbox",
+                "port_name_format": "Ethernet{0}",
+                "port_segment_size": 0,
+                "properties": {
+                    "adapter_type": "Intel PRO/1000 MT Desktop (82540EM)",
+                    "adapters": 1,
+                    "headless": false,
+                    "linked_clone": false,
+                    "on_close": "power_off",
+                    "ram": 128,
+                    "usage": "",
+                    "use_any_adapter": false,
+                    "vmname": "tinylinux2"
+                },
+                "symbol": ":/symbols/vbox_guest.svg",
+                "template_id": "b5a3ece3-d93a-49ab-b6bd-d1a15a238d61",
+                "width": 65,
+                "x": -148,
+                "y": -512,
+                "z": 1
+            },
+            {
+                "compute_id": "local",
+                "console": null,
+                "console_auto_start": false,
+                "console_type": "none",
+                "custom_adapters": [],
+                "first_port_name": "",
+                "height": 59,
+                "label": {
+                    "rotation": 0,
+                    "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                    "text": "hostA2",
+                    "x": 2,
+                    "y": -25
+                },
+                "locked": false,
+                "name": "hostA2",
+                "node_id": "57ecd132-1ccc-4615-b73f-be059f6f7bcd",
+                "node_type": "virtualbox",
+                "port_name_format": "Ethernet{0}",
+                "port_segment_size": 0,
+                "properties": {
+                    "adapter_type": "Intel PRO/1000 MT Desktop (82540EM)",
+                    "adapters": 1,
+                    "headless": false,
+                    "linked_clone": false,
+                    "on_close": "power_off",
+                    "ram": 128,
+                    "usage": "",
+                    "use_any_adapter": false,
+                    "vmname": "tinylinux4"
+                },
+                "symbol": ":/symbols/vbox_guest.svg",
+                "template_id": "135e5bf8-ac3e-4078-bc5f-c61d6d79d640",
+                "width": 65,
+                "x": 604,
+                "y": 6,
                 "z": 1
             }
         ]
