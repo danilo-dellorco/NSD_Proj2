@@ -391,8 +391,8 @@
                 "locked": false,
                 "rotation": 0,
                 "svg": "<svg width=\"21\" height=\"25\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">.2</text></svg>",
-                "x": -97,
-                "y": -442,
+                "x": -63,
+                "y": -440,
                 "z": 2
             },
             {
@@ -400,8 +400,8 @@
                 "locked": false,
                 "rotation": 0,
                 "svg": "<svg width=\"21\" height=\"25\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">.3</text></svg>",
-                "x": 151,
-                "y": -434,
+                "x": 117,
+                "y": -436,
                 "z": 2
             },
             {
@@ -876,6 +876,58 @@
                         },
                         "node_id": "d57fe3a4-4e8e-487a-b14d-ef67612db91a",
                         "port_number": 0
+                    }
+                ],
+                "suspend": false
+            },
+            {
+                "filters": {},
+                "link_id": "d792bca5-492c-40d5-a89f-196adaa1b3b6",
+                "link_style": {},
+                "nodes": [
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "text": "0/0"
+                        },
+                        "node_id": "790cc95d-9d4b-42d1-82db-88c9412dd031",
+                        "port_number": 0
+                    },
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "text": "0/1"
+                        },
+                        "node_id": "09daeb3f-c9d2-4679-be98-a051b1a9cc39",
+                        "port_number": 1
+                    }
+                ],
+                "suspend": false
+            },
+            {
+                "filters": {},
+                "link_id": "bcc9d6bc-520b-48c6-b30d-318099d4cdbc",
+                "link_style": {},
+                "nodes": [
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "text": "0/0"
+                        },
+                        "node_id": "f5d7fee0-0286-428f-aeb5-0af4a2a4dcc5",
+                        "port_number": 0
+                    },
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "text": "0/2"
+                        },
+                        "node_id": "09daeb3f-c9d2-4679-be98-a051b1a9cc39",
+                        "port_number": 2
                     }
                 ],
                 "suspend": false
@@ -1570,7 +1622,7 @@
                     "console_http_path": "/",
                     "console_http_port": 80,
                     "console_resolution": "1024x768",
-                    "container_id": "4412ac23998a9384c3def4fa8221277df2f25077a9a9398fb751c96d99329c0c",
+                    "container_id": "a22d045f821fc2a384eadfa3cee36ff08a83d0a0b9898a2066fc840ccb8b6046",
                     "environment": null,
                     "extra_hosts": null,
                     "extra_volumes": [],
@@ -1612,7 +1664,7 @@
                     "console_http_path": "/",
                     "console_http_port": 80,
                     "console_resolution": "1024x768",
-                    "container_id": "0ea360454cd1c326d39635dfaeafea2e8b2a7effd0347ec4a6a771d01a78d1de",
+                    "container_id": "927464b2e6fd7383056b717f788912b148cdaad82e2afcbc389a85e0c105ce2d",
                     "environment": null,
                     "extra_hosts": null,
                     "extra_volumes": [],
@@ -1654,7 +1706,7 @@
                     "console_http_path": "/",
                     "console_http_port": 80,
                     "console_resolution": "1024x768",
-                    "container_id": "ffeacdb490caa13a23582e049dc4d500087e333e4137b3ba2cf1638975f3da12",
+                    "container_id": "c5b75020b151129d9015ba70ecee8e2bee53cd5d15def7c993a3d4f5d1730be5",
                     "environment": null,
                     "extra_hosts": null,
                     "extra_volumes": [],
@@ -1668,11 +1720,89 @@
                 "x": -715,
                 "y": -289,
                 "z": 1
+            },
+            {
+                "compute_id": "local",
+                "console": null,
+                "console_auto_start": false,
+                "console_type": "none",
+                "custom_adapters": [],
+                "first_port_name": "",
+                "height": 59,
+                "label": {
+                    "rotation": 0,
+                    "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                    "text": "hostA1",
+                    "x": 2,
+                    "y": -25
+                },
+                "locked": false,
+                "name": "hostA1",
+                "node_id": "790cc95d-9d4b-42d1-82db-88c9412dd031",
+                "node_type": "virtualbox",
+                "port_name_format": "Ethernet{0}",
+                "port_segment_size": 0,
+                "properties": {
+                    "adapter_type": "Paravirtualized Network (virtio-net)",
+                    "adapters": 4,
+                    "headless": false,
+                    "linked_clone": false,
+                    "on_close": "power_off",
+                    "ram": 1024,
+                    "usage": "",
+                    "use_any_adapter": true,
+                    "vmname": "lubuntu4"
+                },
+                "symbol": ":/symbols/vbox_guest.svg",
+                "template_id": "52cf44fc-24bc-426c-8788-2c97a535e234",
+                "width": 65,
+                "x": -87,
+                "y": -498,
+                "z": 1
+            },
+            {
+                "compute_id": "local",
+                "console": null,
+                "console_auto_start": false,
+                "console_type": "none",
+                "custom_adapters": [],
+                "first_port_name": "",
+                "height": 59,
+                "label": {
+                    "rotation": 0,
+                    "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                    "text": "hostA2",
+                    "x": 2,
+                    "y": -25
+                },
+                "locked": false,
+                "name": "hostA2",
+                "node_id": "f5d7fee0-0286-428f-aeb5-0af4a2a4dcc5",
+                "node_type": "virtualbox",
+                "port_name_format": "Ethernet{0}",
+                "port_segment_size": 0,
+                "properties": {
+                    "adapter_type": "Paravirtualized Network (virtio-net)",
+                    "adapters": 4,
+                    "headless": false,
+                    "linked_clone": false,
+                    "on_close": "power_off",
+                    "ram": 1024,
+                    "usage": "",
+                    "use_any_adapter": true,
+                    "vmname": "lubuntu5"
+                },
+                "symbol": ":/symbols/vbox_guest.svg",
+                "template_id": "e121e3f8-7945-4a8c-9d52-bbb4d1dfae4a",
+                "width": 65,
+                "x": 92,
+                "y": -501,
+                "z": 1
             }
         ]
     },
     "type": "topology",
     "variables": null,
     "version": "2.2.34",
-    "zoom": 84
+    "zoom": 71
 }
