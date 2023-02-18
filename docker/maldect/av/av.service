@@ -1,0 +1,11 @@
+[Unit]
+Description=Service to listen for executable, analyze it, and send report to central node 
+After=default.target
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=/bin/sh -c "/usr/bin/python3 /home/danilo/code/NSD_Proj2/docker/maldect/start_av.py"
+
+[Install]
+WantedBy=default.target
