@@ -1,6 +1,5 @@
 import socket
 import os
-import subprocess
 
 MALWARE_DIR = "quarantine/"
 REPORT_DIR = "reports/"
