@@ -1,0 +1,13 @@
+/home/danilo/code/NSD_Proj2/docker/clamav/av/quarantine/test_mw: OK
+
+----------- SCAN SUMMARY -----------
+Known viruses: 8668987
+Engine version: 0.103.6
+Scanned directories: 0
+Scanned files: 1
+Infected files: 0
+Data scanned: 0.15 MB
+Data read: 0.14 MB (ratio 1.05:1)
+Time: 15.386 sec (0 m 15 s)
+Start Date: 2023:02:18 19:23:14
+End Date:   2023:02:18 19:23:30

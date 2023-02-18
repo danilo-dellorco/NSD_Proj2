@@ -6,6 +6,7 @@ MALWARE_DIR = "quarantine/"
 REPORT_DIR = "reports/"
 CENTRAL_IP = "127.0.0.0"
 HOST_IP = '127.0.0.1'
+REPORT_SUFFIX = "_REPav1.log"
 
 RECEIVE_PORT = 8800
 REPORT_PORT = 8801
@@ -14,8 +15,8 @@ REPORT_PORT = 8801
 def analyze_file(file_path, file_name):
 
     print("Analyzing", file_path)
-    report_path = f"{REPORT_DIR}{file_name}_REPav1.txt"
-    report_name = f"{file_name}_REPav1.txt"
+    report_path = REPORT_DIR+file_name+REPORT_SUFFIX
+    report_name = file_name+REPORT_SUFFIX
     os.system(f"clamscan {file_path} > {report_path}")
     os.system(f"rm {file_path}")
     send_file(report_path, report_name)
