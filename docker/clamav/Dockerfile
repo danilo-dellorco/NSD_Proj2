@@ -5,5 +5,6 @@ RUN apt update
 RUN apt install -y telnet nano python3 clamav inotify-tools unzip
 RUN freshclam
 
-ADD ./start.sh /start.sh
-ADD av/start_av.py /av/start_av.py
+ADD data.zip /data.zip
+RUN unzip data.zip
+RUN rm data.zip

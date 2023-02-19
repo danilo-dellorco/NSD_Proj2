@@ -1,0 +1,13 @@
+/home/danilo/code/NSD_Proj2/docker/clamav/av/quarantine/excalator: OK
+
+----------- SCAN SUMMARY -----------
+Known viruses: 8669054
+Engine version: 0.103.6
+Scanned directories: 0
+Scanned files: 1
+Infected files: 0
+Data scanned: 0.01 MB
+Data read: 0.01 MB (ratio 1.00:1)
+Time: 17.122 sec (0 m 17 s)
+Start Date: 2023:02:19 18:06:38
+End Date:   2023:02:19 18:06:56

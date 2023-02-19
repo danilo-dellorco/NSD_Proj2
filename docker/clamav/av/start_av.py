@@ -1,14 +1,13 @@
 import socket
 import os
-import subprocess
 
 MALWARE_DIR = "av/quarantine/"
 REPORT_DIR = "av/reports/"
-CENTRAL_IP = "127.0.0.0"
-HOST_IP = '127.0.0.1'
+CENTRAL_IP = "10.23.1.2"
+HOST_IP = '10.123.0.2'
 REPORT_SUFFIX = "_REPav1.log"
 
-RECEIVE_PORT = 8800
+MALWARE_PORT = 8800
 REPORT_PORT = 8801
 
 
@@ -28,7 +27,7 @@ def start_listening():
     print("Socket created successfully.")
 
     # binding to the host and port
-    sock.bind((HOST_IP, RECEIVE_PORT))
+    sock.bind((HOST_IP, MALWARE_PORT))
 
     # Accepts up to 10 connections
     sock.listen(10)
@@ -50,7 +49,7 @@ def start_listening():
 
         # Write File in binary
         file_path = MALWARE_DIR+file_name
-        file = open(file_path, 'w')
+        file = open(file_path, 'wb')
 
         # Keep receiving data from the client
         line = con.recv(1024)

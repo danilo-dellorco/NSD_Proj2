@@ -10,8 +10,8 @@ AV1_IP = '127.0.0.1'
 AV2_IP = '127.0.0.2'
 AV3_IP = '127.0.0.3'
 
-MALWARE_DIR = "quarantine/"
-REPORT_DIR = "reports/"
+MALWARE_DIR = "av/quarantine/"
+REPORT_DIR = "av/reports/"
 CENTRAL_IP = "127.0.0.0"
 AV1_REP_PORT = 8801
 AV2_REP_PORT = 8802

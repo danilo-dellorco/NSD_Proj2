@@ -4,11 +4,11 @@ import os
 
 MALWARE_DIR = "av/quarantine/"
 REPORT_DIR = "av/reports/"
-CENTRAL_IP = "127.0.0.0"
-HOST_IP = '127.0.0.2'
+CENTRAL_IP = "10.23.1.2"
+HOST_IP = '10.123.0.3'
 REPORT_SUFFIX = "_REPav2.log"
 
-SEND_PORT = 8800
+MALWARE_PORT = 8800
 REPORT_PORT = 8802
 
 
@@ -28,7 +28,7 @@ def start_listening():
     print("Socket created successfully.")
 
     # binding to the host and port
-    sock.bind((HOST_IP, REPORT_PORT))
+    sock.bind((HOST_IP, MALWARE_PORT))
 
     # Accepts up to 10 connections
     sock.listen(10)
