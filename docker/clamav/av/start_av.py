@@ -2,8 +2,8 @@ import socket
 import os
 import subprocess
 
-MALWARE_DIR = "quarantine/"
-REPORT_DIR = "reports/"
+MALWARE_DIR = "av/quarantine/"
+REPORT_DIR = "av/reports/"
 CENTRAL_IP = "127.0.0.0"
 HOST_IP = '127.0.0.1'
 REPORT_SUFFIX = "_REPav1.log"
@@ -50,7 +50,7 @@ def start_listening():
 
         # Write File in binary
         file_path = MALWARE_DIR+file_name
-        file = open(file_path, 'wb')
+        file = open(file_path, 'w')
 
         # Keep receiving data from the client
         line = con.recv(1024)
