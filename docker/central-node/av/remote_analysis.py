@@ -91,6 +91,6 @@ if __name__ == "__main__":
     file_name = os.path.basename(file_path)
 
     # Sending File to AVs
-    send_file(file_path, file_name, AV1_IP, AV1_REP_PORT)
+    send_file(file_path,    file_name, AV1_IP, AV1_REP_PORT)
     send_file(file_path, file_name, AV2_IP, AV2_REP_PORT)
     # send_file(file_path, file_name,AV3_IP, AV3_REP_PORT)
