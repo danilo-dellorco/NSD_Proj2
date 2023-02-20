@@ -6,6 +6,8 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox as mb
 from functools import partial
+import requests
+
 
 # Defining Directories
 MALWARE_DIR = "av/quarantine/"
@@ -252,6 +254,7 @@ def merge_files(paths, outpath, separator=""):
             with open(paths[i]) as infile:
                 outfile.write(START_TAGS[i]+"\n")
                 merge_file(infile, outfile, separator)
+
                 outfile.write(END_TAGS[i]+"\n\n")
 
 
@@ -264,6 +267,15 @@ def aggregate_reports(filename):
     out_path = REPORT_DIR+filename+AGGREGATE_SUFFIX
     merge_files(report_files, out_path)
     return out_path
+
+
+def upload_report_to_server(report):
+    """ Send the aggregate report to the remote WebServers in LAN-A1"""
+
+    f = open(report, 'rb')
+    requests.put('http://10.23.0.2:80', data=f.read())
+    requests.put('http://10.23.0.3:80', data=f.read())
+    print("Analysis report sent to web servers.")
 
 
 if __name__ == "__main__":
@@ -289,7 +301,7 @@ if __name__ == "__main__":
 
     aggregate_rep_path = aggregate_reports(file_name)
     make_decision(aggregate_rep_path, MALWARE_DIR+file_name, original_path)
-    # TODO send to http server
+    upload_report_to_server(aggregate_rep_path)
 
     # Clean Local Reports
     os.system("/bin/rm av/reports/*")
