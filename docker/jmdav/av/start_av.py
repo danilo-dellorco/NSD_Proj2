@@ -4,10 +4,11 @@ import os
 
 MALWARE_DIR = "av/quarantine/"
 REPORT_DIR = "av/reports/"
+
 CENTRAL_IP = "10.23.1.2"
 HOST_IP = '10.123.0.3'
-REPORT_SUFFIX = "_REPav2.log"
 
+REPORT_SUFFIX = "_REPav2.log"
 MALWARE_PORT = 8800
 REPORT_PORT = 8802
 

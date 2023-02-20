@@ -7,6 +7,11 @@ import lib.pattern as pattern
 import lib.readelf as readelf
 import lib.pe_printer as printer
 
+SUMMARY_TAG = "<SUMMARY>"
+SUMMARY_ENDTAG = "<SUMMARY_END>"
+
+BINARY_TAG = "<BINARY_ANALYSIS>"
+BINARY_ENDTAG = "<BINARY_ANALYSIS_END>"
 
 # KEYS: Ownership / S-bit / Capabilities / Sections / Packers
 summary_lin = {"Ownership": pattern.SAFE,
@@ -16,8 +21,7 @@ summary_lin = {"Ownership": pattern.SAFE,
                "Packers": pattern.SAFE}
 
 # KEYS: Ownership / S-bit / Capabilities / Sections / Packers
-summary_win = {"Packers": pattern.SAFE,
-               "Sections": pattern.SAFE}
+summary_win = {"Packers": pattern.SAFE}
 
 
 def check_packers(binary):
@@ -29,8 +33,8 @@ def check_packers(binary):
             safe = False
             suspect_sections.append(section_name.name)
     if not safe:
-        summary_win['Packers'] = pattern.NOT_SAFE
-        summary_win['Sections'] = suspect_sections
+        summary_win['Packers'] = pattern.NOT_SAFE + \
+            " | " + str(suspect_sections)
 
 
 def check_sbit(file):
@@ -68,8 +72,6 @@ def elf_analysis(file, report):
 
 def pe_analysis(binary, report):
     analysis_report = printer.pe_reader(binary)
-    # print(analysis_report)
-
     report.write(analysis_report)
 
 
@@ -87,32 +89,32 @@ def analyze(file_path, report_path):
 
         # Write Summary on Report
         sum = str(json.dumps(summary_lin, indent=2))
-        summary_str = 50*"-" + " SUMMARY " + \
-            50*"-"+"\n"+sum+"\n"+110*"-"+"\n\n\n" + \
-            48*"-" + " ELF Analysis " + 48*"-"+"\n\n"
+        summary_str = SUMMARY_TAG + "\n" + sum + "\n" + \
+            SUMMARY_ENDTAG + "\n\n" + BINARY_TAG + "\n"
         report_file.write(summary_str)
 
         # Start ELF Analysis
         elf_analysis(file_path, report_file)
+        report_file.write("\n"+BINARY_ENDTAG+"\n")
 
     elif pattern.EXE_FORMAT in file_info:
         pe_binary = lief.parse(file_path)
         check_packers(pe_binary)
         # Write Summary on Report
         sum = str(json.dumps(summary_win, indent=2))
-        summary_str = 50*"-" + " SUMMARY " + \
-            50*"-"+"\n"+sum+"\n"+110*"-"+"\n\n\n" + \
-            48*"-" + " PE Analysis " + 48*"-"+"\n\n"
+        summary_str = SUMMARY_TAG + "\n" + sum + "\n" + \
+            SUMMARY_ENDTAG + "\n\n" + BINARY_TAG + "\n"
         report_file.write(summary_str)
         pe_analysis(pe_binary, report_file)
+        report_file.write("\n"+BINARY_ENDTAG+"\n")
 
     else:
         sum = str(json.dumps(summary_lin, indent=2))
-        summary_str = 50*"-" + " SUMMARY " + \
-            50*"-"+"\n"+sum+"\n"+110*"-"+"\n\n\n" + \
-            47*"-" + " Simple Analysis " + 46*"-"+"\n"
+        summary_str = SUMMARY_TAG + "\n" + sum + "\n" + \
+            SUMMARY_ENDTAG + "\n\n" + BINARY_TAG + "\n"
         report_file.write(summary_str)
         report_file.write(file_info)
+        report_file.write("\n"+BINARY_ENDTAG+"\n")
 
     report_file.close()
 

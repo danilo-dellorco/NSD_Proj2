@@ -1,24 +1,63 @@
 import socket
+from lib import comparator
 import os
 
 MALWARE_DIR = "av/quarantine/"
 REPORT_DIR = "av/reports/"
-
 CENTRAL_IP = "10.23.1.2"
-HOST_IP = '10.123.0.2'
+HOST_IP = "10.123.0.4"
 
-REPORT_SUFFIX = "_REPav1.log"
+REPORT_SUFFIX = "_REPav3.log"
+LOG_DIR = "/var/log/"
+BASELINE_LOG = "rkhunter_baseline.log"
+LOG_NAME = "_rkhunter.log"
+
 MALWARE_PORT = 8800
-REPORT_PORT = 8801
+REPORT_PORT = 8803
+ELF_FORMAT = "ELF"
+
+SUMMARY_TAG = '<DIFF_SUMMARY>'
+END_SUMMARY_TAG = '<DIFF_SUMMARY_END>'
+ANALYSIS_TAG = '<RKHunter_ANALYSIS>'
+END_ANALYSIS_TAG = '<END_RKHunter_ANALYSIS>'
 
 
 def analyze_file(file_path, file_name):
-
-    print("Analyzing..", file_path)
+    print("Analyzing...")
     report_path = REPORT_DIR+file_name+REPORT_SUFFIX
     report_name = file_name+REPORT_SUFFIX
-    os.system(f"clamscan {file_path} > {report_path}")
-    os.system(f"rm {file_path}")
+
+    report_file = open(report_path, 'w')
+
+    file_info = os.popen(f"file {file_path}").read()
+
+    if ELF_FORMAT not in file_info:
+        report_file.write("Can't execute on this environment\n")
+        send_file(report_path, report_name)
+
+    # binary execution
+    os.system("sh ."+file_path)
+
+    # rkhunter analysis
+    os.system("rkhunter --check --sk --nocolors > " +
+              LOG_DIR+file_name+LOG_NAME)
+
+    print("Analysis Completed")
+
+    # compare with baseline log
+    with open(LOG_DIR+BASELINE_LOG) as baseline, open(LOG_DIR+file_name+LOG_NAME) as log:
+        difference = comparator.compare_report(baseline, log)
+
+    summary_str = SUMMARY_TAG + "\n"\
+        + difference + \
+        END_SUMMARY_TAG + "\n\n\n" +\
+        ANALYSIS_TAG + "\n"
+
+    with open(LOG_DIR+file_name+LOG_NAME) as log:
+        summary_str += ''.join(log.readlines())
+
+    summary_str += END_ANALYSIS_TAG+"\n"
+    report_file.write(summary_str)
     send_file(report_path, report_name)
 
 
@@ -55,14 +94,14 @@ def start_listening():
         # Keep receiving data from the client
         line = con.recv(1024)
 
-        while(line):
+        while (line):
             file.write(line)
             line = con.recv(1024)
 
         print('File has been received successfully.')
         file.close()
         con.close()
-        analyze_file(file_path, file_name)
+        analyze_file(file_path, file_name, )
 
 
 def send_file(file_path, file_name):
@@ -85,7 +124,7 @@ def send_file(file_path, file_name):
     line = file.read(1024)
 
     # Keep sending data to the server
-    while(line):
+    while (line):
         sock.send(line)
         line = file.read(1024)
 
