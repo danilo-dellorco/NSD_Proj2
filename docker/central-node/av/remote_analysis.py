@@ -257,7 +257,7 @@ if __name__ == "__main__":
     aggregate_rep_path = aggregate_reports(file_name)
 
     # Sending File to AVs
-    send_file(file_path,    file_name, AV1_IP, AV1_REP_PORT)
+    send_file(file_path, file_name, AV1_IP, AV1_REP_PORT)
     send_file(file_path, file_name, AV2_IP, AV2_REP_PORT)
     send_file(file_path, file_name, AV3_IP, AV3_REP_PORT)
 
