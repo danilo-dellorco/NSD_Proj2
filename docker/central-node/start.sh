@@ -12,5 +12,5 @@ inotifywait -m $(cat .conf/to_scan) -e create -e moved_to |
         path=$dir$file
         q_path=./av/quarantine/$file
         mv $path $q_path
-        python3 ./av/remote_analysis.py $q_path
+        python3 ./av/remote_analysis.py $q_path $path
     done
