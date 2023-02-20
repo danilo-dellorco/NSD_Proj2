@@ -757,6 +757,38 @@
                     }
                 ],
                 "suspend": false
+            },
+            {
+                "filters": {},
+                "link_id": "2c2a75ce-4130-4957-a9e2-32b78bea80c2",
+                "link_style": {},
+                "nodes": [
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "rotation": 0,
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "text": "e2",
+                            "x": 74,
+                            "y": 7
+                        },
+                        "node_id": "09daeb3f-c9d2-4679-be98-a051b1a9cc39",
+                        "port_number": 2
+                    },
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "rotation": 0,
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "text": "e0",
+                            "x": -6,
+                            "y": 38
+                        },
+                        "node_id": "4949fbb7-6520-4d99-94a4-b87d578f1ad7",
+                        "port_number": 0
+                    }
+                ],
+                "suspend": false
             }
         ],
         "nodes": [
@@ -1497,6 +1529,45 @@
                 "width": 65,
                 "x": 604,
                 "y": 6,
+                "z": 1
+            },
+            {
+                "compute_id": "local",
+                "console": null,
+                "console_auto_start": false,
+                "console_type": "none",
+                "custom_adapters": [],
+                "first_port_name": "",
+                "height": 59,
+                "label": {
+                    "rotation": 0,
+                    "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                    "text": "ubuntu-server-1",
+                    "x": -30,
+                    "y": -25
+                },
+                "locked": false,
+                "name": "ubuntu-server-1",
+                "node_id": "4949fbb7-6520-4d99-94a4-b87d578f1ad7",
+                "node_type": "virtualbox",
+                "port_name_format": "Ethernet{0}",
+                "port_segment_size": 0,
+                "properties": {
+                    "adapter_type": "Intel PRO/1000 MT Desktop (82540EM)",
+                    "adapters": 1,
+                    "headless": false,
+                    "linked_clone": false,
+                    "on_close": "power_off",
+                    "ram": 1024,
+                    "usage": "",
+                    "use_any_adapter": false,
+                    "vmname": "ubuntu-server"
+                },
+                "symbol": ":/symbols/vbox_guest.svg",
+                "template_id": "00cd6d91-c82c-4080-b821-b98ab68cb594",
+                "width": 65,
+                "x": 156,
+                "y": -518,
                 "z": 1
             }
         ]
