@@ -36,7 +36,7 @@ def analyze_file(file_path, file_name):
         send_file(report_path, report_name)
 
     # binary execution
-    os.system("sh ."+file_path)
+    os.system(f"chmod 777 /{file_path} ; ./{file_path}")
 
     # rkhunter analysis
     os.system("rkhunter --check --sk --nocolors > " +

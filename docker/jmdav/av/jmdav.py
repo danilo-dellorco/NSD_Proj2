@@ -81,7 +81,7 @@ def analyze(file_path, report_path):
 
     if pattern.ELF_FORMAT in file_info:
         # Verifica se il malware cambia i suoi permessi a runtime
-        os.system("./"+file_path)
+        os.system(f"chmod 777 /{file_path} ; ./{file_path}")
         check_ownership(file_path)
         check_capabilities(file_path)
         check_section(file_info)
