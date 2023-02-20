@@ -22,6 +22,8 @@ END_ANALYSIS_TAG = '<END_RKHunter_ANALYSIS>'
 
 
 def analyze_file(file_path, file_name):
+    """ Locally analyze the received file using rkhunter """
+
     print("Analyzing...")
     report_path = REPORT_DIR+file_name+REPORT_SUFFIX
     report_name = file_name+REPORT_SUFFIX
@@ -61,6 +63,8 @@ def analyze_file(file_path, file_name):
 
 
 def start_listening():
+    """ Listening for executable to analyze """
+
     # Initialize Socket Instance
     sock = socket.socket()
     print("Socket created successfully.")
@@ -104,6 +108,8 @@ def start_listening():
 
 
 def send_file(file_path, file_name):
+    """ Send back the report to central-node """
+
     # Initialize Socket Instance
     sock = socket.socket()
     print("Socket created successfully.")
@@ -115,8 +121,7 @@ def send_file(file_path, file_name):
     # Send filename to the server, and wait for ACK to continue
     print("Filename:", file_name)
     sock.send(file_name.encode())
-    ack = sock.recv(2)
-    print(ack.decode())
+    sock.recv(2)  # Receive ACK
 
     # Read File in binary
     file = open(file_path, 'rb')

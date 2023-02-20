@@ -12,6 +12,7 @@ REPORT_PORT = 8801
 
 
 def analyze_file(file_path, file_name):
+    """ Locally Analyze the received file using clamscan """
 
     print("Analyzing..", file_path)
     report_path = REPORT_DIR+file_name+REPORT_SUFFIX
@@ -22,6 +23,8 @@ def analyze_file(file_path, file_name):
 
 
 def start_listening():
+    """ Listen for incoming executable to analyze """
+
     # Initialize Socket Instance
     sock = socket.socket()
     print("Socket created successfully.")
@@ -65,6 +68,8 @@ def start_listening():
 
 
 def send_file(file_path, file_name):
+    """ Send the report back to the central-node"""
+
     # Initialize Socket Instance
     sock = socket.socket()
     print("Socket created successfully.")

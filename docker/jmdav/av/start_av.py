@@ -13,6 +13,7 @@ REPORT_PORT = 8802
 
 
 def analyze_file(file_path, file_name):
+    """ Locally analyze the file using jmdav """
 
     print("Analyzing", file_path)
     report_path = REPORT_DIR+file_name+REPORT_SUFFIX
@@ -23,6 +24,7 @@ def analyze_file(file_path, file_name):
 
 
 def start_listening():
+    """ Start listening for executables to analyze """
     # Initialize Socket Instance
     sock = socket.socket()
     print("Socket created successfully.")
@@ -66,6 +68,8 @@ def start_listening():
 
 
 def send_file(file_path, file_name):
+    """ Send Back the report to central-node """
+
     # Initialize Socket Instance
     sock = socket.socket()
     print("Socket created successfully.")

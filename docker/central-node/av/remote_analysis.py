@@ -39,6 +39,8 @@ lock_av3 = threading.Lock()
 
 
 def delete_mw(quarantine_path, window):
+    """Choose to Delete the malware from the Central-Node"""
+
     tk.messagebox.showinfo("Message", "File has Been Deleted.")
     os.system(f"rm {quarantine_path}")
     window.withdraw()
@@ -46,14 +48,17 @@ def delete_mw(quarantine_path, window):
 
 
 def keep_mw(quarantine_path, original_path, window):
+    """Choose to Keep the malware in the Central-Node"""
+
     tk.messagebox.showinfo(
-        "Message", "File has been restored from /quarantine")
-    os.system(f"mv {quarantine_path} {original_path}")
+        "Message", "File has been kept in "+quarantine_path)
     window.withdraw()
     window.destroy()
 
 
 def send_file(file_path, file_name, dest_ip, rep_port):
+    """ Send the malware to the test node dest_ip"""
+
     if rep_port == AV1_REP_PORT:
         lock = lock_av1
     elif rep_port == AV2_REP_PORT:
@@ -75,8 +80,7 @@ def send_file(file_path, file_name, dest_ip, rep_port):
     # Send filename to the server, and wait for ACK to continue
     print("Filename:", file_name)
     sock.send(file_name.encode())
-    ack = sock.recv(2)
-    print(ack.decode())
+    sock.recv(2)  # Receive ACK
 
     # Read File in binary
     file = open(file_path, 'rb')
@@ -97,6 +101,8 @@ def send_file(file_path, file_name, dest_ip, rep_port):
 
 
 def start_listening(port, lock):
+    """ Listen for report from test node"""
+
     print(f"Thread listening on {port} for incoming report")
     # Initialize Socket & Bind Address
     sock = socket.socket()
@@ -131,6 +137,8 @@ def start_listening(port, lock):
 
 
 def extract_information(start_tag, end_tag, fp):
+    """ Returns the string between two tags in a file """
+
     copy = False
     out = ""
     for line in fp:
@@ -148,6 +156,11 @@ def extract_information(start_tag, end_tag, fp):
 
 
 def make_decision(report_path, file_path, original_path):
+    """ 
+    Evaluates the report and decides if the executable it's dangerous or not.
+    If the exec it's dangerous a prompt it's showed to the user to decide to delete the mw or not
+    """
+
     threats_found = []
     report = open(report_path, "r")
     report_av1 = extract_information(START_TAGS[0], END_TAGS[0], report)
@@ -168,7 +181,6 @@ def make_decision(report_path, file_path, original_path):
         if ("not_safe" in entry):
             threats_found.append(entry)
 
-    print(result_av3)
     for diff in result_av3:
         diff = diff.replace('!', "")
         diff = diff.replace(' ', "")
@@ -181,6 +193,8 @@ def make_decision(report_path, file_path, original_path):
 
 
 def ask_user(file_path, threats, original_path):
+    """ Ask the user to delete or Keep the malware, showing the threats encountered"""
+
     ws = tk.Tk()
     ws.eval('tk::PlaceWindow . center')
     ws.title(string='Antivirus Framework')
@@ -225,11 +239,14 @@ def ask_user(file_path, threats, original_path):
 
 
 def merge_file(infile, outfile, separator=""):
+    """ Helper to merge two files"""
+
     for line in infile:
         outfile.write(line.strip("\n")+separator+"\n")
 
 
 def merge_files(paths, outpath, separator=""):
+    """ Merge two files """
     with open(outpath, 'w') as outfile:
         for i in range(0, len(paths)):
             with open(paths[i]) as infile:
@@ -239,6 +256,8 @@ def merge_files(paths, outpath, separator=""):
 
 
 def aggregate_reports(filename):
+    """ Generates the aggregate report of the AVs"""
+
     report_files = [0, 0, 0]
     for i in range(0, 3):
         report_files[i] = (REPORT_DIR+filename+REPORT_SUFFIXES[i])
@@ -262,10 +281,6 @@ if __name__ == "__main__":
     av1_thr.start()
     av2_thr.start()
     av3_thr.start()
-
-    # send_file(file_path, file_name, AV1_IP, AV1_REP_PORT)
-    # send_file(file_path, file_name, AV2_IP, AV2_REP_PORT)
-    # send_file(file_path, file_name, AV3_IP, AV3_REP_PORT)
 
     # Make decision on file only after all AVs reports has been received
     lock_av1.acquire()

@@ -25,6 +25,7 @@ summary_win = {"Packers": pattern.SAFE}
 
 
 def check_packers(binary):
+    """ Check if the PE Executable is Packed """
     suspect_sections = []
     safe = True
 
@@ -38,29 +39,38 @@ def check_packers(binary):
 
 
 def check_sbit(file):
+    """ Check if the s-bit is setted on the ELF File """
+
     sbit = oct(os.stat(file).st_mode)[-4:][0]
     if int(sbit) >= 4:
         summary_lin['S-bit'] = pattern.NOT_SAFE
 
 
 def check_section(info):
+    """ Check if the ELF has no Sections """
+
     if pattern.NO_SECTION in info:
         summary_lin["Sections"] = pattern.NOT_SAFE
 
 
 def check_capabilities(file):
+    """ Check if the ELF has some Capabilities """
+
     caps = os.popen(f"getcap {file}").read()
     if caps != "":
         summary_lin["Capabilities"] = pattern.NOT_SAFE + " = " + caps[:-1]
 
 
 def check_ownership(file):
+    """ Check if the file has root as owner """
+
     owner = getpwuid(os.stat(file).st_uid).pw_name
     if owner == "root":
         summary_lin["Ownership"] = pattern.NOT_SAFE
 
 
 def elf_analysis(file, report):
+    """ Launch all tests on the ELF file """
     elf = open(file, 'rb')
     elf_reader = readelf.ReadElf(elf, report)
 
@@ -71,11 +81,13 @@ def elf_analysis(file, report):
 
 
 def pe_analysis(binary, report):
+    """ Analyze te PE Binary """
     analysis_report = printer.pe_reader(binary)
     report.write(analysis_report)
 
 
 def analyze(file_path, report_path):
+    """ Analyze the binary, distinguishing PE from ELF """
     report_file = open(report_path, 'w')
     file_info = os.popen(f"file {file_path}").read()
 
