@@ -12,7 +12,6 @@ LOG_DIR = "/var/log/"
 BASELINE_LOG = "rkhunter_baseline.log"
 LOG_NAME = "_rkhunter.log"
 
-MALWARE_PORT = 8800
 REPORT_PORT = 8803
 ELF_FORMAT = "ELF"
 
@@ -67,7 +66,7 @@ def start_listening():
     print("Socket created successfully.")
 
     # binding to the host and port
-    sock.bind((HOST_IP, MALWARE_PORT))
+    sock.bind((HOST_IP, REPORT_PORT))
 
     # Accepts up to 10 connections
     sock.listen(10)

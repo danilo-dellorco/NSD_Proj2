@@ -12,7 +12,6 @@ MALWARE_DIR = "av/quarantine/"
 REPORT_DIR = "av/reports/"
 
 # Defining Ports and IPs
-SEND_PORT = 8800
 AV1_REP_PORT = 8801
 AV2_REP_PORT = 8802
 AV3_REP_PORT = 8803
@@ -63,15 +62,14 @@ def send_file(file_path, file_name, dest_ip, rep_port):
         lock = lock_av3
     lock.acquire()
 
-    print(
-        f"Spawned thread, sending malware on {SEND_PORT}, listening on {rep_port} for incoming report")
+    print(f"Spawned thread, sending malware on {rep_port}")
 
     # Initialize Socket Instance
     sock = socket.socket()
     print("Socket created successfully.")
 
     # Connect socket to the host and port
-    sock.connect((dest_ip, SEND_PORT))
+    sock.connect((dest_ip, rep_port))
     print('Connection Established.')
 
     # Send filename to the server, and wait for ACK to continue
@@ -99,6 +97,7 @@ def send_file(file_path, file_name, dest_ip, rep_port):
 
 
 def start_listening(port, lock):
+    print(f"Thread listening on {port} for incoming report")
     # Initialize Socket & Bind Address
     sock = socket.socket()
     sock.bind((CENTRAL_IP, port))
