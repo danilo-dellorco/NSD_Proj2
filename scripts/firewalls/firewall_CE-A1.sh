@@ -1,6 +1,6 @@
 # interfaces
 export EXT=enp0s3
-export LAN=enp0s8
+export LAN=macsec0
 
 # iptables without -t is implicit referred to filter table
 # flush every rule from every chain
@@ -21,8 +21,8 @@ iptables -A POSTROUTING -t nat -o $EXT -j SNAT --to 10.23.0.2-10.23.0.254
 iptables -A INPUT -i $LAN -p tcp --dport 22 -j ACCEPT
 iptables -A INPUT -i $LAN -p icmp -j ACCEPT
 # deny traffic from GW to host if not initiated by LAN
-iptables -A OUTPUT -o $LAN -p icmp -m state --state NEW -j DROP
-iptables -A OUTPUT -o $LAN -p tcp --dport 22 -m state --state NEW -j DROP
+#iptables -A OUTPUT -o $LAN -p icmp -m state --state NEW -j DROP
+#iptables -A OUTPUT -o $LAN -p tcp --dport 22 -m state --state NEW -j DROP
 
 # 3) permit all traffic from GW to everywhere (and related response packets)
 iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
