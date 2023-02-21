@@ -220,8 +220,8 @@
                 "locked": false,
                 "rotation": 0,
                 "svg": "<svg width=\"344\" height=\"336\"><rect width=\"344\" height=\"336\" fill=\"#ffffff\" fill-opacity=\"1.0\" stroke-width=\"2\" stroke=\"#000000\" /></svg>",
-                "x": 478,
-                "y": -294,
+                "x": 479,
+                "y": -296,
                 "z": 0
             },
             {
@@ -337,8 +337,8 @@
                 "locked": false,
                 "rotation": 0,
                 "svg": "<svg width=\"21\" height=\"25\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#000000\" fill-opacity=\"1.0\">.1</text></svg>",
-                "x": -417,
-                "y": 214,
+                "x": -456,
+                "y": 204,
                 "z": 2
             },
             {
@@ -658,38 +658,6 @@
             },
             {
                 "filters": {},
-                "link_id": "a1f0fc29-f1c7-4d1b-bb7f-ca639a9c6068",
-                "link_style": {},
-                "nodes": [
-                    {
-                        "adapter_number": 0,
-                        "label": {
-                            "rotation": 0,
-                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
-                            "text": "e0",
-                            "x": 58,
-                            "y": 0
-                        },
-                        "node_id": "7e95f301-0ede-47f7-a440-ff10b879eeca",
-                        "port_number": 0
-                    },
-                    {
-                        "adapter_number": 3,
-                        "label": {
-                            "rotation": 0,
-                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
-                            "text": "g3/0",
-                            "x": 6,
-                            "y": 52
-                        },
-                        "node_id": "a97d8048-f8bc-436b-8c9a-536725b30f48",
-                        "port_number": 0
-                    }
-                ],
-                "suspend": false
-            },
-            {
-                "filters": {},
                 "link_id": "f09a4ca6-5368-45bc-95fd-64acf886601b",
                 "link_style": {},
                 "nodes": [
@@ -870,63 +838,31 @@
             },
             {
                 "filters": {},
-                "link_id": "2c913fec-4373-450a-909b-032b8a58ba19",
+                "link_id": "b0e93539-5379-48d7-838a-2147ba8bccbb",
                 "link_style": {},
                 "nodes": [
                     {
-                        "adapter_number": 0,
+                        "adapter_number": 3,
                         "label": {
                             "rotation": 0,
                             "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
-                            "text": "e0",
-                            "x": 52,
-                            "y": -5
+                            "text": "g3/0",
+                            "x": 4,
+                            "y": 50
                         },
-                        "node_id": "1fd3875f-bd4d-4384-ad70-1c6a9fc17249",
+                        "node_id": "a97d8048-f8bc-436b-8c9a-536725b30f48",
                         "port_number": 0
                     },
-                    {
-                        "adapter_number": 1,
-                        "label": {
-                            "rotation": 0,
-                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
-                            "text": "e1",
-                            "x": 12,
-                            "y": 64
-                        },
-                        "node_id": "7e95f301-0ede-47f7-a440-ff10b879eeca",
-                        "port_number": 0
-                    }
-                ],
-                "suspend": false
-            },
-            {
-                "filters": {},
-                "link_id": "5df6e087-8577-407c-b043-07925b9382de",
-                "link_style": {},
-                "nodes": [
                     {
                         "adapter_number": 0,
                         "label": {
                             "rotation": 0,
                             "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                             "text": "eth0",
-                            "x": -4,
-                            "y": 62
+                            "x": 67,
+                            "y": -5
                         },
-                        "node_id": "a8424cb3-4bcd-4d56-a726-bbc93d31cee7",
-                        "port_number": 0
-                    },
-                    {
-                        "adapter_number": 2,
-                        "label": {
-                            "rotation": 0,
-                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
-                            "text": "g2/0",
-                            "x": 62,
-                            "y": -4
-                        },
-                        "node_id": "c71daad8-4a3e-4125-8efc-0cdecef72ddb",
+                        "node_id": "a10c75ac-409b-4ad1-aab3-8cb3f11517fc",
                         "port_number": 0
                     }
                 ],
@@ -934,7 +870,39 @@
             },
             {
                 "filters": {},
-                "link_id": "cb906b04-45fe-4344-949c-4aa8d09ae573",
+                "link_id": "4065afe2-144e-45e9-92b6-29724bd6b8a5",
+                "link_style": {},
+                "nodes": [
+                    {
+                        "adapter_number": 2,
+                        "label": {
+                            "rotation": 0,
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "text": "g2/0",
+                            "x": 63,
+                            "y": -3
+                        },
+                        "node_id": "c71daad8-4a3e-4125-8efc-0cdecef72ddb",
+                        "port_number": 0
+                    },
+                    {
+                        "adapter_number": 0,
+                        "label": {
+                            "rotation": 0,
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "text": "eth0",
+                            "x": -5,
+                            "y": 61
+                        },
+                        "node_id": "c80eba5a-7de8-4bfb-a4de-dde9345a1bcf",
+                        "port_number": 0
+                    }
+                ],
+                "suspend": false
+            },
+            {
+                "filters": {},
+                "link_id": "45d78d82-2a3d-4bd7-9efe-f67a1dafd060",
                 "link_style": {},
                 "nodes": [
                     {
@@ -944,9 +912,9 @@
                             "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                             "text": "eth1",
                             "x": 72,
-                            "y": 29
+                            "y": 27
                         },
-                        "node_id": "a8424cb3-4bcd-4d56-a726-bbc93d31cee7",
+                        "node_id": "c80eba5a-7de8-4bfb-a4de-dde9345a1bcf",
                         "port_number": 0
                     },
                     {
@@ -956,41 +924,9 @@
                             "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                             "text": "e0",
                             "x": -4,
-                            "y": 16
+                            "y": 18
                         },
                         "node_id": "37d7109f-93e5-4adc-a898-1e8c87999f85",
-                        "port_number": 0
-                    }
-                ],
-                "suspend": false
-            },
-            {
-                "filters": {},
-                "link_id": "2234eb85-b2ea-4ed4-b9de-41a7d8cc4a2f",
-                "link_style": {},
-                "nodes": [
-                    {
-                        "adapter_number": 0,
-                        "label": {
-                            "rotation": 0,
-                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
-                            "text": "e1",
-                            "x": 65,
-                            "y": -10
-                        },
-                        "node_id": "37d7109f-93e5-4adc-a898-1e8c87999f85",
-                        "port_number": 1
-                    },
-                    {
-                        "adapter_number": 0,
-                        "label": {
-                            "rotation": 0,
-                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
-                            "text": "eth0",
-                            "x": -5,
-                            "y": 62
-                        },
-                        "node_id": "4e7963b8-9fb2-48fa-9915-94413b453a40",
                         "port_number": 0
                     }
                 ],
@@ -1397,110 +1333,6 @@
             },
             {
                 "compute_id": "local",
-                "console": null,
-                "console_auto_start": false,
-                "console_type": "none",
-                "custom_adapters": [
-                    {
-                        "adapter_number": 0,
-                        "port_name": "e0"
-                    },
-                    {
-                        "adapter_number": 1,
-                        "port_name": "e1"
-                    },
-                    {
-                        "adapter_number": 2,
-                        "port_name": "e2"
-                    }
-                ],
-                "first_port_name": "",
-                "height": 59,
-                "label": {
-                    "rotation": 0,
-                    "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
-                    "text": "central-node",
-                    "x": 67,
-                    "y": 24
-                },
-                "locked": false,
-                "name": "central-node",
-                "node_id": "1fd3875f-bd4d-4384-ad70-1c6a9fc17249",
-                "node_type": "virtualbox",
-                "port_name_format": "swp{0}",
-                "port_segment_size": 0,
-                "properties": {
-                    "adapter_type": "Paravirtualized Network (virtio-net)",
-                    "adapters": 3,
-                    "headless": false,
-                    "linked_clone": false,
-                    "on_close": "power_off",
-                    "ram": 1024,
-                    "usage": "",
-                    "use_any_adapter": false,
-                    "vmname": "lubuntu2"
-                },
-                "symbol": ":/symbols/vbox_guest.svg",
-                "template_id": "5317c330-3bfe-4423-a403-0222f356a3b5",
-                "width": 65,
-                "x": -513,
-                "y": 248,
-                "z": 1
-            },
-            {
-                "compute_id": "local",
-                "console": null,
-                "console_auto_start": false,
-                "console_type": "none",
-                "custom_adapters": [
-                    {
-                        "adapter_number": 0,
-                        "port_name": "e0"
-                    },
-                    {
-                        "adapter_number": 1,
-                        "port_name": "e1"
-                    },
-                    {
-                        "adapter_number": 2,
-                        "port_name": "e2"
-                    }
-                ],
-                "first_port_name": "",
-                "height": 59,
-                "label": {
-                    "rotation": 0,
-                    "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
-                    "text": "CE-A3",
-                    "x": 7,
-                    "y": -25
-                },
-                "locked": false,
-                "name": "CE-A3",
-                "node_id": "7e95f301-0ede-47f7-a440-ff10b879eeca",
-                "node_type": "virtualbox",
-                "port_name_format": "swp{0}",
-                "port_segment_size": 0,
-                "properties": {
-                    "adapter_type": "Paravirtualized Network (virtio-net)",
-                    "adapters": 3,
-                    "headless": false,
-                    "linked_clone": false,
-                    "on_close": "power_off",
-                    "ram": 1024,
-                    "usage": "",
-                    "use_any_adapter": false,
-                    "vmname": "lubuntu3"
-                },
-                "symbol": ":/symbols/vbox_guest.svg",
-                "template_id": "39c50dfa-d45d-4fd0-a6d1-bdf1f42b6f77",
-                "width": 65,
-                "x": -458,
-                "y": 153,
-                "z": 1
-            },
-            {
-                "compute_id": "local",
                 "console": 5000,
                 "console_auto_start": false,
                 "console_type": "none",
@@ -1865,7 +1697,7 @@
             },
             {
                 "compute_id": "vm",
-                "console": 5000,
+                "console": 5002,
                 "console_auto_start": false,
                 "console_type": "telnet",
                 "custom_adapters": [],
@@ -1874,40 +1706,40 @@
                 "label": {
                     "rotation": 0,
                     "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
-                    "text": "AV1",
-                    "x": 14,
+                    "text": "CE-A3",
+                    "x": 7,
                     "y": -25
                 },
                 "locked": false,
-                "name": "AV1",
-                "node_id": "4e7963b8-9fb2-48fa-9915-94413b453a40",
+                "name": "CE-A3",
+                "node_id": "a10c75ac-409b-4ad1-aab3-8cb3f11517fc",
                 "node_type": "docker",
                 "port_name_format": "Ethernet{0}",
                 "port_segment_size": 0,
                 "properties": {
                     "adapters": 3,
-                    "aux": 5001,
+                    "aux": 5003,
                     "console_http_path": "/",
                     "console_http_port": 80,
                     "console_resolution": "1024x768",
-                    "container_id": "29657494936e8bb85174bcd6588b393e885324cfcf23d25ed5adbe7759257715",
+                    "container_id": "b76d0d6381d1183faf7aad87d4e920cf4f23d52a5de638e8c384b8dc162d5ecb",
                     "environment": null,
                     "extra_hosts": null,
                     "extra_volumes": [],
-                    "image": "sixxpain/openvpn:final",
+                    "image": "sixxpain/nubuntu:final",
                     "start_command": null,
                     "usage": ""
                 },
                 "symbol": ":/symbols/docker_guest.svg",
-                "template_id": "86c5e9c3-0b22-4237-a913-a5795c92ebed",
+                "template_id": "c8e76be9-ad8c-4da1-a53b-fdbfdf5992c2",
                 "width": 65,
-                "x": 704,
-                "y": -238,
+                "x": -481,
+                "y": 149,
                 "z": 1
             },
             {
                 "compute_id": "vm",
-                "console": 5002,
+                "console": 5008,
                 "console_auto_start": false,
                 "console_type": "telnet",
                 "custom_adapters": [],
@@ -1922,29 +1754,29 @@
                 },
                 "locked": false,
                 "name": "CE-A2",
-                "node_id": "a8424cb3-4bcd-4d56-a726-bbc93d31cee7",
+                "node_id": "c80eba5a-7de8-4bfb-a4de-dde9345a1bcf",
                 "node_type": "docker",
                 "port_name_format": "Ethernet{0}",
                 "port_segment_size": 0,
                 "properties": {
                     "adapters": 3,
-                    "aux": 5003,
+                    "aux": 5009,
                     "console_http_path": "/",
                     "console_http_port": 80,
                     "console_resolution": "1024x768",
-                    "container_id": "1765e60942ef427b2fea08cca425d5e0876b5fa4deb232c898c577228ade7380",
+                    "container_id": "8bf5eb55d45f50a8ffc4f21845c133f989e7461b9f33e8b43109d7594fdc3e73",
                     "environment": null,
                     "extra_hosts": null,
                     "extra_volumes": [],
-                    "image": "sixxpain/rkhav:baseline",
+                    "image": "sixxpain/nubuntu:final",
                     "start_command": null,
                     "usage": ""
                 },
                 "symbol": ":/symbols/docker_guest.svg",
-                "template_id": "4a620c94-9db9-47fb-86ea-1b6a66b2bc52",
+                "template_id": "c8e76be9-ad8c-4da1-a53b-fdbfdf5992c2",
                 "width": 65,
-                "x": 442,
-                "y": -146,
+                "x": 446,
+                "y": -138,
                 "z": 1
             }
         ]
