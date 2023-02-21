@@ -1,5 +1,6 @@
-# extract info between two tags
 def extract_information(start_tag, end_tag, fp):
+    """ Extract Report Info Between two tags """
+
     copy = False
     out = ""
     for line in fp:
@@ -14,8 +15,10 @@ def extract_information(start_tag, end_tag, fp):
     fp.seek(0)
     return out
 
-# remove unuseful fields from report
+
 def remove_fields(dictionary):
+    """ Remove the useless Fields from the Clamav Report"""
+
     dictionary.pop("Engine version")
     dictionary.pop("Known viruses")
     dictionary.pop("Scanned directories")
@@ -23,8 +26,10 @@ def remove_fields(dictionary):
     dictionary.pop("Infected files")
     dictionary.pop("Data read")
 
-# send html page of detailed analysis
+
 def download_details(self):
+    """ Handle the download request for the Extended Txt Report  """
+
     if self.path.split("/")[1] == "details":
         f = open(self.path[1:]).read()
         self.send_response(200)

@@ -8,7 +8,10 @@ import os
 scan = {}
 scan_list = []
 
+
 class WebServer(BaseHTTPRequestHandler):
+    """ Handle the GET and PUT requests, updating the html Web Page """
+
     index = "index.html"
     updated = "updated.html"
     dir1 = "scans/"
@@ -34,9 +37,11 @@ class WebServer(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(bytes(f, 'utf-8'))
 
-
     # retrieve new scan information from central node
+
     def do_PUT(self):
+        """ Receives report from the central-node, and parse it to update html Report Table """
+
         content_length = int(self.headers['Content-Length'])
         body = self.rfile.read(content_length)
         try:
@@ -55,9 +60,11 @@ class WebServer(BaseHTTPRequestHandler):
             output = "file open error"
             self.send_error(404, output)
 
-
     # fill html template with scan reports
+
     def update_html(self):
+        """ Updates the HTML Web Page scanning the report folders, and parsing it into a Table """
+
         if len(os.listdir(self.dir1)) == 0:
             if os.path.exists(self.updated):
                 os.remove(self.updated)
@@ -78,9 +85,9 @@ class WebServer(BaseHTTPRequestHandler):
         htmlfile.close()
         print("HTML report generated.\n")
 
-
-    # split clamav report to fill table
     def get_clamav_data(self, report, check):
+        """ Extract and Parse the Clamav Data from the Global Report """
+
         clamav = utils.extract_information("<AV1_START>", "<AV1_END>", report)
         print(clamav)
         splitcontent = clamav.splitlines()
@@ -99,8 +106,9 @@ class WebServer(BaseHTTPRequestHandler):
         check = True
         utils.remove_fields(scan)   # remove unuseful fields of clamav
 
-    # split jmdav report to fill table
     def get_jmdav_data(self, report):
+        """ Extract and Parse the JMDav Data from the Global Report """
+
         jmdav = utils.extract_information("<SUMMARY>", "<SUMMARY_END>", report)
         splitcontent = jmdav.splitlines()
         for line in splitcontent:
@@ -112,8 +120,9 @@ class WebServer(BaseHTTPRequestHandler):
                 print(value)
                 scan[key] = value
 
-        # split jmdav report to fill table
     def get_rkhav_data(self, report):
+        """ Extract and Parse the Rkhav Data from the Global Report """
+
         rkhav = utils.extract_information("<AV3_START>", "<AV3_END>", report)
         splitcontent = rkhav.splitlines()
         threats = list()
@@ -125,34 +134,35 @@ class WebServer(BaseHTTPRequestHandler):
         scan["rootkit"] = list()
         scan["rootkit"].extend(threats)
 
-    # create detail file for extended analysis
     def get_full_analysis(self, report, count):
+        """ Extract the Extended Information from JMDav and Rkhav and writes into a txt file """
+
         # details field with href for download extended details file
         prog_name = os.path.basename(scan["Program Name"])
-        path2 = os.path.join(self.dir2, "analysis_" + str(count) + "_" + prog_name + ".txt")
+        path2 = os.path.join(self.dir2, "analysis_" +
+                             str(count) + "_" + prog_name + ".txt")
         scan["Details"] = path2
         scan_list.append(scan.copy())
         scan.clear()
         # save more details to file for download
-        tmp1 = utils.extract_information("<BINARY_ANALYSIS>", "<BINARY_ANALYSIS_END>", report)
-        tmp2 = utils.extract_information("<RKHunter_ANALYSIS>", "<END_RKHunter_ANALYSIS>", report)
+        tmp1 = utils.extract_information(
+            "<BINARY_ANALYSIS>", "<BINARY_ANALYSIS_END>", report)
+        tmp2 = utils.extract_information(
+            "<RKHunter_ANALYSIS>", "<END_RKHunter_ANALYSIS>", report)
         details = open(path2, 'w')
         details.write(tmp1 + "\n\n" + tmp2)
         details.close()
         count += 1
 
 
-def run():
+if __name__ == "__main__":
     print("Server starting...")
-    #address = (ni.ifaddresses('eth0')[ni.AF_INET][0]['addr'], 80)
-    address = ('127.0.0.1', 8080)
+    address = (ni.ifaddresses('enp0s3')[ni.AF_INET][0]['addr'], 80)
     server = HTTPServer(address, WebServer)
-    print(time.asctime(), "Start Server - %s:%s" %(address[0], address[1]))
+    print(time.asctime(), "Start Server - %s:%s" % (address[0], address[1]))
     try:
         server.serve_forever()
     except KeyboardInterrupt:
         pass
     server.server_close()
-    print(time.asctime(),"\nStop Server - %s:%s" %(address[0], address[1]))
-    
-run()
+    print(time.asctime(), "\nStop Server - %s:%s" % (address[0], address[1]))
