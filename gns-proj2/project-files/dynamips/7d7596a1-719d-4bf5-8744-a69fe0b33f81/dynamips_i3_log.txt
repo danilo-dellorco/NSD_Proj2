@@ -1,0 +1,42 @@
+Feb 07 21:51:48.717 HYPERVISOR: Release 0.2.23-amd64/Linux (tag 2023010200)
+Feb 07 21:51:48.717 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 56429.
+Feb 07 21:51:48.728 HYPERVISOR: exec_cmd: hypervisor version 
+Feb 07 21:51:48.729 HYPERVISOR: exec_cmd: hypervisor working_dir /home/danilo/code/NSD_Proj2/gns-proj2/project-files/dynamips 
+Feb 07 21:51:48.729 GENERAL: working_dir=/home/danilo/code/NSD_Proj2/gns-proj2/project-files/dynamips
+Feb 07 21:51:48.730 HYPERVISOR: exec_cmd: hypervisor working_dir /home/danilo/code/NSD_Proj2/gns-proj2/project-files/dynamips/b90748c6-4ce5-4e18-a5f6-4c6ac8ba7ade 
+Feb 07 21:51:48.730 GENERAL: working_dir=/home/danilo/code/NSD_Proj2/gns-proj2/project-files/dynamips/b90748c6-4ce5-4e18-a5f6-4c6ac8ba7ade
+Feb 07 21:51:48.730 HYPERVISOR: exec_cmd: vm create PE2 1 c7200 
+Feb 07 21:51:48.730 VM: VM PE2 created.
+Feb 07 21:51:48.731 HYPERVISOR: exec_cmd: vm set_con_tcp_port PE2 5002 
+Feb 07 21:51:48.731 HYPERVISOR: exec_cmd: c7200 get_mac_addr PE2 
+Feb 07 21:51:48.731 HYPERVISOR: exec_cmd: vm get_status PE2 
+Feb 07 21:51:48.731 HYPERVISOR: exec_cmd: vm slot_add_binding PE2 0 0 C7200-IO-FE 
+Feb 07 21:51:48.732 HYPERVISOR: exec_cmd: vm set_disk0 PE2 0 
+Feb 07 21:51:48.732 HYPERVISOR: exec_cmd: vm get_status PE2 
+Feb 07 21:51:48.732 HYPERVISOR: exec_cmd: vm set_idle_pc PE2 0x606e0000 
+Feb 07 21:51:48.733 HYPERVISOR: exec_cmd: vm set_ios PE2 /home/danilo/GNS3/images/IOS/c7200-adventerprisek9-mz.124-24.T5.image 
+Feb 07 21:51:48.733 HYPERVISOR: exec_cmd: c7200 set_mac_addr PE2 ca01.3a58.0000 
+Feb 07 21:51:48.734 HYPERVISOR: exec_cmd: vm set_nvram PE2 512 
+Feb 07 21:51:48.734 HYPERVISOR: exec_cmd: vm get_status PE2 
+Feb 07 21:51:48.734 HYPERVISOR: exec_cmd: vm slot_add_binding PE2 1 0 PA-GE 
+Feb 07 21:51:48.734 HYPERVISOR: exec_cmd: vm get_status PE2 
+Feb 07 21:51:48.735 HYPERVISOR: exec_cmd: vm slot_add_binding PE2 2 0 PA-GE 
+Feb 07 21:51:48.735 HYPERVISOR: exec_cmd: vm get_status PE2 
+Feb 07 21:51:48.735 HYPERVISOR: exec_cmd: vm slot_add_binding PE2 3 0 PA-GE 
+Feb 07 21:51:48.735 HYPERVISOR: exec_cmd: vm get_status PE2 
+Feb 07 21:51:48.736 HYPERVISOR: exec_cmd: vm slot_add_binding PE2 4 0 PA-GE 
+Feb 07 21:51:48.736 HYPERVISOR: exec_cmd: vm get_status PE2 
+Feb 07 21:51:48.736 HYPERVISOR: exec_cmd: vm slot_add_binding PE2 5 0 PA-GE 
+Feb 07 21:51:48.737 HYPERVISOR: exec_cmd: vm set_con_tcp_port PE2 5002 
+Feb 07 21:51:50.131 HYPERVISOR: exec_cmd: nio create_udp udp-8a5fa362-9c18-4df5-b69b-ef3dc54c0543 10026 127.0.0.1 10027 
+Feb 07 21:51:50.345 HYPERVISOR: exec_cmd: vm slot_add_nio_binding PE2 2 0 udp-8a5fa362-9c18-4df5-b69b-ef3dc54c0543 
+Feb 07 21:51:50.346 HYPERVISOR: exec_cmd: vm get_status PE2 
+Feb 07 21:52:05.484 HYPERVISOR: exec_cmd: vm get_status PE2 
+Feb 07 21:52:05.485 HYPERVISOR: exec_cmd: vm extract_config PE2 
+Feb 07 21:52:06.771 HYPERVISOR: exec_cmd: vm get_status PE2 
+Feb 07 21:52:06.772 HYPERVISOR: exec_cmd: vm extract_config PE2 
+Feb 07 21:52:06.772 HYPERVISOR: exec_cmd: vm delete PE2 
+Feb 07 21:52:06.772 VM: VM PE2 destroyed.
+Feb 07 21:52:06.773 HYPERVISOR: exec_cmd: hypervisor stop 
+Feb 07 21:52:07.246 HYPERVISOR: Stopped.
+Feb 07 21:52:07.246 GENERAL: reset done.
