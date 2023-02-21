@@ -76,9 +76,11 @@ class WebServer(BaseHTTPRequestHandler):
             path1 = os.path.join(self.dir1, filename)
             report = open(path1, 'r')
             self.get_clamav_data(report, check)
-            self.get_jmdav_data(report)
             self.get_rkhav_data(report)
             self.get_full_analysis(report, count)
+            scan_list.append(scan.copy())
+            scan.clear()
+            count += 1
         result_template2 = environment.get_template("template-home.html")
         htmlfile = open(self.updated, 'w')
         htmlfile.write(result_template2.render(scan_list=scan_list))
@@ -106,20 +108,6 @@ class WebServer(BaseHTTPRequestHandler):
         check = True
         utils.remove_fields(scan)   # remove unuseful fields of clamav
 
-    def get_jmdav_data(self, report):
-        """ Extract and Parse the JMDav Data from the Global Report """
-
-        jmdav = utils.extract_information("<SUMMARY>", "<SUMMARY_END>", report)
-        splitcontent = jmdav.splitlines()
-        for line in splitcontent:
-            res = line.split(": ", 1)
-            if len(res) == 2:
-                key, value = res
-                print(value)
-                value.replace('\"', "")
-                print(value)
-                scan[key] = value
-
     def get_rkhav_data(self, report):
         """ Extract and Parse the Rkhav Data from the Global Report """
 
@@ -142,22 +130,22 @@ class WebServer(BaseHTTPRequestHandler):
         path2 = os.path.join(self.dir2, "analysis_" +
                              str(count) + "_" + prog_name + ".txt")
         scan["Details"] = path2
-        scan_list.append(scan.copy())
-        scan.clear()
         # save more details to file for download
         tmp1 = utils.extract_information(
-            "<BINARY_ANALYSIS>", "<BINARY_ANALYSIS_END>", report)
+            "<SUMMARY>", "<SUMMARY_END>", report)
         tmp2 = utils.extract_information(
+            "<BINARY_ANALYSIS>", "<BINARY_ANALYSIS_END>", report)
+        tmp3 = utils.extract_information(
             "<RKHunter_ANALYSIS>", "<END_RKHunter_ANALYSIS>", report)
         details = open(path2, 'w')
-        details.write(tmp1 + "\n\n" + tmp2)
+        details.write(tmp1 + "\n\n" + tmp2 + "\n\n" + tmp3)
         details.close()
-        count += 1
 
 
 if __name__ == "__main__":
     print("Server starting...")
-    address = (ni.ifaddresses('enp0s3')[ni.AF_INET][0]['addr'], 80)
+    #address = (ni.ifaddresses('enp0s3')[ni.AF_INET][0]['addr'], 80)
+    address = ("127.0.0.1", 8081)
     server = HTTPServer(address, WebServer)
     print(time.asctime(), "Start Server - %s:%s" % (address[0], address[1]))
     try:
