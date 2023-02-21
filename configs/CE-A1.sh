@@ -4,7 +4,6 @@
 echo 1 > /proc/sys/net/ipv4/ip_forward
 
 ip addr add 100.0.21.2/30 dev enp0s3
-ip route add default via 100.0.21.1
 
 
 ## MACSec
@@ -26,3 +25,6 @@ ipv4.method manual \
 ipv4.addresses 10.23.0.1/24
 
 nmcli connection up macsec-connection
+
+
+ip route add default via 100.0.21.1
