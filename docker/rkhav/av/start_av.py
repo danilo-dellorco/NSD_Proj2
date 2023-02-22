@@ -35,6 +35,7 @@ def analyze_file(file_path, file_name):
     if ELF_FORMAT not in file_info:
         report_file.write("Can't execute on this environment\n")
         send_file(report_path, report_name)
+        return
 
     # binary execution
     os.system(f"chmod 777 /{file_path} ; ./{file_path}")
