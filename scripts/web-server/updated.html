@@ -1,4 +1,4 @@
-{# templates/template.html #}
+
 
 <html>
     <head>
@@ -20,21 +20,48 @@
                     <th>Time</th>
                     <th>Start Date</th>
                     <th>End Date</th>
+                    <th>rootkit</th>
                     <th>Details</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for dict_item in scan_list %}
+                    
                     <tr>
-                        {% for key, value in dict_item.items() %}
-                            {% if key == 'Details' %}
-                                <td> <a href={{ STATIC_PREFIX }}{{ value }} class="btn btn-primary" download>Download Analysis</a> </td>
-                            {% else %}
-                                <td>{{ value }}</td>
-                            {% endif %}
-                        {% endfor %}
+                        
+                            
+                                <td>/home/jacopo/Scrivania/SporaRansomware.exe</td>
+                            
+                        
+                            
+                                <td> Win.Ransomware.Spora-5743591-0 FOUND</td>
+                            
+                        
+                            
+                                <td> 0.02 MB</td>
+                            
+                        
+                            
+                                <td> 25.393 sec (0 m 25 s)</td>
+                            
+                        
+                            
+                                <td> 2023:02:19 15:01:57</td>
+                            
+                        
+                            
+                                <td>   2023:02:19 15:02:22</td>
+                            
+                        
+                            
+                                <td>['!     beX2                            [Found]', '!     LKM                             [Warning]']</td>
+                            
+                        
+                            
+                                <td> <a href=details/analysis_0_SporaRansomware.exe.txt class="btn btn-primary" download>Download Analysis</a> </td>
+                            
+                        
                     </tr>
-                    {% endfor %}
+                    
                 </tbody>
             </table>
         </div>

@@ -1,0 +1,481 @@
+<AV1_START>
+/home/jacopo/Scrivania/SporaRansomware.exe: Win.Ransomware.Spora-5743591-0 FOUND
+
+----------- SCAN SUMMARY -----------
+Known viruses: 8653189
+Engine version: 0.103.5
+Scanned directories: 0
+Scanned files: 1
+Infected files: 1
+Data scanned: 0.02 MB
+Data read: 0.02 MB (ratio 1.00:1)
+Time: 25.393 sec (0 m 25 s)
+Start Date: 2023:02:19 15:01:57
+End Date:   2023:02:19 15:02:22
+<AV1_END>
+
+<AV2_START>
+<SUMMARY>
+{
+  "Packers": "not_safe | ['UPX0', 'UPX1']",
+  "s-bit": "not_safe",
+  "ownership" : "safe"
+  "Capabilities": "safe"
+  "Sections": "safe" 
+}
+<SUMMARY_END>
+
+<BINARY_ANALYSIS>
+== Information ==
+Name:                          ../../../../malwares-samples/windows/Bezilom.exe
+Virtual size:                  0x8000                        
+Imphash:                       bf247e78a39b828d6e02b95575397c38
+PIE:                           False                         
+NX:                            False                         
+
+== Dos Header ==
+Magic:                            23117                         
+Used bytes in the last page:      144                           
+File size in pages:               3                             
+Number of relocations:            0                             
+Header size in paragraphs:        4                             
+Minimum extra paragraphs:         0                             
+Maximum extra paragraphs          65535                         
+Initial relative SS               0                             
+Initial SP:                       0xb8                          
+Checksum:                         0x0                           
+Initial IP:                       0                             
+Initial CS:                       0                             
+Address of relocation table:      0x40                          
+Overlay number:                   0                             
+OEM ID:                           0                             
+OEM information                   0                             
+Address of optional header:       0xb8                          
+
+
+== Header ==
+Signature:                        PE\00\00                          
+Machine:                          MACHINE_TYPES.I386            
+Number of sections:               3                             
+Time Date stamp:                  1013718549                    
+Pointer to symbols:               0                             
+Number of symbols:                0                             
+Size of optional header:          224                           
+Characteristics:                  CHARA_32BIT_MACHINE - RELOCS_STRIPPED - EXECUTABLE_IMAGE - LINE_NUMS_STRIPPED - LOCAL_SYMS_STRIPPED
+
+== Optional Header ==
+Magic:                            PE32                          
+Major linker version:             6                             
+Minor linker version:             0                             
+Size of code:                     20480                         
+Size of initialized data:         8192                          
+Size of uninitialized data:       0                             
+Entry point:                      0x1108                        
+Base of code:                     0x1000                        
+Base of data                      0x6000                        
+Image base:                       0x400000                      
+Section alignment:                0x1000                        
+File alignment:                   0x1000                        
+Major operating system version:   4                             
+Minor operating system version:   0                             
+Major image version:              1                             
+Minor image version:              0                             
+Major subsystem version:          4                             
+Minor subsystem version:          0                             
+WIN32 version value:              0                             
+Size of image:                    0x8000                        
+Size of headers:                  0x1000                        
+Checksum:                         0x981c                        
+Subsystem:                        WINDOWS_GUI                   
+DLL Characteristics:                                            
+Size of stack reserve:            0x100000                      
+Size of stack commit:             0x1000                        
+Size of heap reserve:             0x100000                      
+Size of heap commit:              0x1000                        
+Loader flags:                     0                             
+Number of RVA and size:           16                            
+
+== Data Directories ==
+|Type                     | RVA        | Size       | Section  |
+|EXPORT_TABLE             | 0x0        | 0x0        |          |
+|IMPORT_TABLE             | 0x5e24     | 0x28       | .text    |
+|RESOURCE_TABLE           | 0x7000     | 0x748      | .rsrc    |
+|EXCEPTION_TABLE          | 0x0        | 0x0        |          |
+|CERTIFICATE_TABLE        | 0x0        | 0x0        |          |
+|BASE_RELOCATION_TABLE    | 0x0        | 0x0        |          |
+|DEBUG                    | 0x0        | 0x0        |          |
+|ARCHITECTURE             | 0x0        | 0x0        |          |
+|GLOBAL_PTR               | 0x0        | 0x0        |          |
+|TLS_TABLE                | 0x0        | 0x0        |          |
+|LOAD_CONFIG_TABLE        | 0x0        | 0x0        |          |
+|BOUND_IMPORT             | 0x228      | 0x20       |          |
+|IAT                      | 0x1000     | 0x68       | .text    |
+|DELAY_IMPORT_DESCRIPTOR  | 0x0        | 0x0        |          |
+|CLR_RUNTIME_HEADER       | 0x0        | 0x0        |          |
+|RESERVED                 | 0x0        | 0x0        |          |
+
+== Sections ==
+|Name       | Offset           | Size             | Virtual Address    | Virtual size     | Entropy   | Flags    
+|.text      | 0x1000           | 0x5000           | 0x1000             | 0x4f54           | 5.04      | CNT_CODE MEM_EXECUTE MEM_READ 
+|.data      | 0x0              | 0x0              | 0x6000             | 0xc20            | 0.00      | CNT_INITIALIZED_DATA MEM_READ MEM_WRITE 
+|.rsrc      | 0x6000           | 0x1000           | 0x7000             | 0x748            | 3.67      | CNT_INITIALIZED_DATA MEM_READ 
+
+== Symbols ==
+
+== Imports ==
+MSVBVM60.DLL
+  MethCallEngine                    0x5ec2           0x6aacf5ee       0x0               
+                                    0x80000206       0x6aab9608       0x0               
+                                    0x80000207       0x6a9f40c1       0x0               
+                                    0x80000251       0x6aab06f6       0x0               
+                                    0x80000252       0x6aab072b       0x0               
+                                    0x80000256       0x6a9f7822       0x0               
+                                    0x80000208       0x6aab9669       0x0               
+                                    0x8000020e       0x6aab9d89       0x0               
+  EVENT_SINK_AddRef                 0x5ed4           0x6a9ed08b       0x0               
+                                    0x80000210       0x6aab9f38       0x0               
+  DllFunctionCall                   0x5ee8           0x6a9eb038       0x0               
+  EVENT_SINK_Release                0x5efa           0x6a9fe283       0x0               
+  EVENT_SINK_QueryInterface         0x5f10           0x6aaa43d1       0x0               
+  __vbaExceptHandler                0x5f2c           0x6a9f47a2       0x0               
+                                    0x8000025f       0x6aab9edb       0x0               
+                                    0x80000260       0x6aab3f8f       0x0               
+                                    0x800002cc       0x6a9f87ea       0x0               
+  ProcCallEngine                    0x5f42           0x6aacd05d       0x0               
+                                    0x80000219       0x6aab3ef7       0x0               
+                                    0x80000240       0x6aaac32b       0x0               
+                                    0x80000064       0x6a9ddda2       0x0               
+                                    0x80000268       0x6a9f419a       0x0               
+                                    0x80000269       0x6a9f4338       0x0               
+                                    0x8000026b       0x6aab9005       0x0               
+                                    0x80000244       0x6aaac66b       0x0               
+
+== TLS ==
+Address of callbacks:             0x0                           
+Address of index:                 0x0                           
+Size of zero fill:                0x0                           
+Address of raw data:              0x0          0x0         
+Size of raw data:                 0x0                           
+Characteristics:                  0x0                           
+
+== Exports ==
+                     0x0          0x0          0x0      0x0      0x0         
+
+== Debug (0) ==
+
+== Rich Header ==
+Key: 0x886973f3
+  - ID: 000d Build ID: 1fe9 Count: 1
+
+== Load Configuration ==
+
+== Constructors ==
+Functions: (0)
+
+== Exception functions ==
+Functions: (0)
+
+== Functions ==
+Functions: (0)
+
+== Delay Imports ==
+
+<BINARY_ANALYSIS_END>
+<AV2_END>
+
+<AV3_START>
+!     beX2 rootkit                           [Found]
+!     LKM rootkit                            [Warning]
+<AV3_END>
+
+<RKHunter_ANALYSIS>
+[ Rootkit Hunter version 1.4.6 ]
+
+Checking system commands...
+
+  Performing 'strings' command checks
+    Checking 'strings' command                               [ OK ]
+
+  Performing 'shared libraries' checks
+    Checking for preloading variables                        [ None found ]
+    Checking for preloaded libraries                         [ None found ]
+    Checking LD_LIBRARY_PATH variable                        [ Not found ]
+
+  Performing file properties checks
+    Checking for prerequisites                               [ OK ]
+    /usr/sbin/adduser                                        [ OK ]
+    /usr/sbin/chroot                                         [ OK ]
+    /usr/sbin/groupadd                                       [ OK ]
+    /usr/sbin/groupdel                                       [ Warning ]
+    /usr/sbin/groupmod                                       [ OK ]
+    /usr/sbin/grpck                                          [ OK ]
+    /usr/sbin/nologin                                        [ OK ]
+    /usr/sbin/pwck                                           [ OK ]
+    /usr/sbin/useradd                                        [ OK ]
+    /usr/sbin/userdel                                        [ OK ]
+    /usr/sbin/usermod                                        [ OK ]
+    /usr/sbin/vipw                                           [ OK ]
+    /usr/sbin/unhide                                         [ OK ]
+    /usr/sbin/unhide-linux                                   [ OK ]
+    /usr/sbin/unhide-posix                                   [ OK ]
+    /usr/sbin/unhide-tcp                                     [ OK ]
+    /usr/bin/awk                                             [ OK ]
+    /usr/bin/basename                                        [ OK ]
+    /usr/bin/chattr                                          [ OK ]
+    /usr/bin/curl                                            [ OK ]
+    /usr/bin/cut                                             [ OK ]
+    /usr/bin/diff                                            [ OK ]
+    /usr/bin/dirname                                         [ OK ]
+    /usr/bin/dpkg                                            [ OK ]
+    /usr/bin/dpkg-query                                      [ OK ]
+    /usr/bin/du                                              [ OK ]
+    /usr/bin/env                                             [ OK ]
+    /usr/bin/file                                            [ OK ]
+    /usr/bin/find                                            [ OK ]
+    /usr/bin/groups                                          [ OK ]
+    /usr/bin/head                                            [ OK ]
+    /usr/bin/id                                              [ OK ]
+    /usr/bin/ipcs                                            [ OK ]
+    /usr/bin/last                                            [ OK ]
+    /usr/bin/lastlog                                         [ OK ]
+    /usr/bin/ldd                                             [ OK ]
+    /usr/bin/less                                            [ OK ]
+    /usr/bin/logger                                          [ OK ]
+    /usr/bin/lsattr                                          [ OK ]
+    /usr/bin/lsof                                            [ OK ]
+    /usr/bin/mail                                            [ OK ]
+    /usr/bin/md5sum                                          [ OK ]
+    /usr/bin/newgrp                                          [ OK ]
+    /usr/bin/passwd                                          [ OK ]
+    /usr/bin/perl                                            [ OK ]
+    /usr/bin/pgrep                                           [ OK ]
+    /usr/bin/pkill                                           [ OK ]
+    /usr/bin/rkhunter                                        [ OK ]
+    /usr/bin/runcon                                          [ OK ]
+    /usr/bin/sha1sum                                         [ OK ]
+    /usr/bin/sha224sum                                       [ OK ]
+    /usr/bin/sha256sum                                       [ OK ]
+    /usr/bin/sha384sum                                       [ OK ]
+    /usr/bin/sha512sum                                       [ OK ]
+    /usr/bin/size                                            [ OK ]
+    /usr/bin/sort                                            [ OK ]
+    /usr/bin/stat                                            [ OK ]
+    /usr/bin/strings                                         [ OK ]
+    /usr/bin/tail                                            [ OK ]
+    /usr/bin/telnet                                          [ OK ]
+    /usr/bin/test                                            [ OK ]
+    /usr/bin/top                                             [ OK ]
+    /usr/bin/touch                                           [ OK ]
+    /usr/bin/tr                                              [ OK ]
+    /usr/bin/uniq                                            [ OK ]
+    /usr/bin/users                                           [ OK ]
+    /usr/bin/vmstat                                          [ OK ]
+    /usr/bin/w                                               [ OK ]
+    /usr/bin/watch                                           [ OK ]
+    /usr/bin/wc                                              [ OK ]
+    /usr/bin/wget                                            [ OK ]
+    /usr/bin/whatis                                          [ OK ]
+    /usr/bin/whereis                                         [ OK ]
+    /usr/bin/which                                           [ OK ]
+    /usr/bin/who                                             [ OK ]
+    /usr/bin/whoami                                          [ OK ]
+    /usr/bin/numfmt                                          [ OK ]
+    /usr/bin/mawk                                            [ OK ]
+    /usr/bin/bsd-mailx                                       [ OK ]
+    /usr/bin/x86_64-linux-gnu-size                           [ OK ]
+    /usr/bin/x86_64-linux-gnu-strings                        [ OK ]
+    /usr/bin/telnet.netkit                                   [ OK ]
+    /usr/bin/w.procps                                        [ OK ]
+    /sbin/fsck                                               [ OK ]
+    /sbin/ifconfig                                           [ OK ]
+    /sbin/ip                                                 [ OK ]
+    /sbin/route                                              [ OK ]
+    /sbin/sulogin                                            [ OK ]
+    /sbin/sysctl                                             [ OK ]
+    /bin/bash                                                [ OK ]
+    /bin/cat                                                 [ OK ]
+    /bin/chmod                                               [ OK ]
+    /bin/chown                                               [ OK ]
+    /bin/cp                                                  [ OK ]
+    /bin/date                                                [ OK ]
+    /bin/df                                                  [ OK ]
+    /bin/dmesg                                               [ OK ]
+    /bin/echo                                                [ OK ]
+    /bin/egrep                                               [ OK ]
+    /bin/fgrep                                               [ OK ]
+    /bin/grep                                                [ OK ]
+    /bin/ip                                                  [ OK ]
+    /bin/kill                                                [ OK ]
+    /bin/less                                                [ OK ]
+    /bin/login                                               [ OK ]
+    /bin/ls                                                  [ OK ]
+    /bin/mktemp                                              [ OK ]
+    /bin/more                                                [ OK ]
+    /bin/mount                                               [ OK ]
+    /bin/mv                                                  [ OK ]
+    /bin/netstat                                             [ OK ]
+    /bin/ping                                                [ OK ]
+    /bin/ps                                                  [ OK ]
+    /bin/pwd                                                 [ OK ]
+    /bin/readlink                                            [ OK ]
+    /bin/sed                                                 [ OK ]
+    /bin/sh                                                  [ OK ]
+    /bin/su                                                  [ OK ]
+    /bin/touch                                               [ OK ]
+    /bin/uname                                               [ OK ]
+    /bin/which                                               [ OK ]
+    /bin/dash                                                [ OK ]
+
+Checking for rootkits...
+
+  Performing check of known rootkit files and directories
+    55808 Trojan - Variant A                                 [ Not found ]
+    ADM Worm                                                 [ Not found ]
+    AjaKit Rootkit                                           [ Not found ]
+    Adore Rootkit                                            [ Not found ]
+    aPa Kit                                                  [ Not found ]
+    Apache Worm                                              [ Not found ]
+    Ambient (ark) Rootkit                                    [ Not found ]
+    Balaur Rootkit                                           [ Not found ]
+    BeastKit Rootkit                                         [ Not found ]
+    beX2 Rootkit                                             [ Found ]
+    BOBKit Rootkit                                           [ Not found ]
+    cb Rootkit                                               [ Not found ]
+    CiNIK Worm (Slapper.B variant)                           [ Not found ]
+    Danny-Boy's Abuse Kit                                    [ Not found ]
+    Devil RootKit                                            [ Not found ]
+    Diamorphine LKM                                          [ Not found ]
+    Dica-Kit Rootkit                                         [ Not found ]
+    Dreams Rootkit                                           [ Not found ]
+    Duarawkz Rootkit                                         [ Not found ]
+    Ebury backdoor                                           [ Not found ]
+    Enye LKM                                                 [ Not found ]
+    Flea Linux Rootkit                                       [ Not found ]
+    Fu Rootkit                                               [ Not found ]
+    Fuck`it Rootkit                                          [ Not found ]
+    GasKit Rootkit                                           [ Not found ]
+    Heroin LKM                                               [ Not found ]
+    HjC Kit                                                  [ Not found ]
+    ignoKit Rootkit                                          [ Not found ]
+    IntoXonia-NG Rootkit                                     [ Not found ]
+    Irix Rootkit                                             [ Not found ]
+    Jynx Rootkit                                             [ Not found ]
+    Jynx2 Rootkit                                            [ Not found ]
+    KBeast Rootkit                                           [ Not found ]
+    Kitko Rootkit                                            [ Not found ]
+    Knark Rootkit                                            [ Not found ]
+    ld-linuxv.so Rootkit                                     [ Not found ]
+    Li0n Worm                                                [ Not found ]
+    Lockit / LJK2 Rootkit                                    [ Not found ]
+    Mokes backdoor                                           [ Not found ]
+    Mood-NT Rootkit                                          [ Not found ]
+    MRK Rootkit                                              [ Not found ]
+    Ni0 Rootkit                                              [ Not found ]
+    Ohhara Rootkit                                           [ Not found ]
+    Optic Kit (Tux) Worm                                     [ Not found ]
+    Oz Rootkit                                               [ Not found ]
+    Phalanx Rootkit                                          [ Not found ]
+    Phalanx2 Rootkit                                         [ Not found ]
+    Phalanx2 Rootkit (extended tests)                        [ Not found ]
+    Portacelo Rootkit                                        [ Not found ]
+    R3dstorm Toolkit                                         [ Not found ]
+    RH-Sharpe's Rootkit                                      [ Not found ]
+    RSHA's Rootkit                                           [ Not found ]
+    Scalper Worm                                             [ Not found ]
+    Sebek LKM                                                [ Not found ]
+    Shutdown Rootkit                                         [ Not found ]
+    SHV4 Rootkit                                             [ Not found ]
+    SHV5 Rootkit                                             [ Not found ]
+    Sin Rootkit                                              [ Not found ]
+    Slapper Worm                                             [ Not found ]
+    Sneakin Rootkit                                          [ Not found ]
+    'Spanish' Rootkit                                        [ Not found ]
+    Suckit Rootkit                                           [ Not found ]
+    Superkit Rootkit                                         [ Not found ]
+    TBD (Telnet BackDoor)                                    [ Not found ]
+    TeLeKiT Rootkit                                          [ Not found ]
+    T0rn Rootkit                                             [ Not found ]
+    trNkit Rootkit                                           [ Not found ]
+    Trojanit Kit                                             [ Not found ]
+    Tuxtendo Rootkit                                         [ Not found ]
+    URK Rootkit                                              [ Not found ]
+    Vampire Rootkit                                          [ Not found ]
+    VcKit Rootkit                                            [ Not found ]
+    Volc Rootkit                                             [ Not found ]
+    Xzibit Rootkit                                           [ Not found ]
+    zaRwT.KiT Rootkit                                        [ Not found ]
+    ZK Rootkit                                               [ Not found ]
+
+  Performing additional rootkit checks
+    Suckit Rootkit additional checks                         [ Warning ]
+    Checking for possible rootkit files and directories      [ None found ]
+    Checking for possible rootkit strings                    [ None found ]
+
+  Performing malware checks
+    Checking running processes for suspicious files          [ None found ]
+    Checking for login backdoors                             [ None found ]
+    Checking for sniffer log files                           [ None found ]
+    Checking for suspicious directories                      [ None found ]
+    Checking for suspicious (large) shared memory segments   [ None found ]
+
+  Performing Linux specific checks
+    Checking loaded kernel modules                           [ Skipped ]
+    Checking kernel module names                             [ Warning ]
+
+Checking the network...
+
+  Performing checks on the network ports
+    Checking for backdoor ports                              [ None found ]
+
+  Performing checks on the network interfaces
+    Checking for promiscuous interfaces                      [ None found ]
+
+Checking the local host...
+
+  Performing system boot checks
+    Checking for local host name                             [ Found ]
+    Checking for system startup files                        [ Found ]
+    Checking system startup files for malware                [ None found ]
+
+  Performing group and account checks
+    Checking for passwd file                                 [ Found ]
+    Checking for root equivalent (UID 0) accounts            [ None found ]
+    Checking for passwordless accounts                       [ None found ]
+    Checking for passwd file changes                         [ None found ]
+    Checking for group file changes                          [ None found ]
+    Checking root account shell history files                [ None found ]
+
+  Performing system configuration file checks
+    Checking for an SSH configuration file                   [ Not found ]
+    Checking for a running system logging daemon             [ Warning ]
+    Checking for a system logging configuration file         [ Not found ]
+
+  Performing filesystem checks
+    Checking /dev for suspicious file types                  [ None found ]
+    Checking for hidden files and directories                [ None found ]
+
+
+System checks summary
+=====================
+
+File properties checks...
+    Files checked: 122
+    Suspect files: 0
+
+Rootkit checks...
+    Rootkits checked : 460
+    Possible rootkits: 1
+    Rootkit names    : Suckit Rootkit (additional checks)
+
+Applications checks...
+    All checks skipped
+
+The system checks took: 1 minute and 4 seconds
+
+All results have been written to the log file: /var/log/rkhunter.log
+
+One or more warnings have been found while checking the system.
+Please check the log file (/var/log/rkhunter.log)
+
+<END_RKHunter_ANALYSIS>
+

@@ -60,8 +60,6 @@ class WebServer(BaseHTTPRequestHandler):
             output = "file open error"
             self.send_error(404, output)
 
-    # fill html template with scan reports
-
     def update_html(self):
         """ Updates the HTML Web Page scanning the report folders, and parsing it into a Table """
 
@@ -76,13 +74,15 @@ class WebServer(BaseHTTPRequestHandler):
             path1 = os.path.join(self.dir1, filename)
             report = open(path1, 'r')
             self.get_clamav_data(report, check)
-            self.get_jmdav_data(report)
-            self.get_rkhav_data(report)
             self.get_full_analysis(report, count)
+            scan_list.append(scan.copy())
+            scan.clear()
+            count += 1
         result_template2 = environment.get_template("template-home.html")
         htmlfile = open(self.updated, 'w')
         htmlfile.write(result_template2.render(scan_list=scan_list))
         htmlfile.close()
+        scan_list.clear()
         print("HTML report generated.\n")
 
     def get_clamav_data(self, report, check):
@@ -98,6 +98,7 @@ class WebServer(BaseHTTPRequestHandler):
                 key, value = res
                 # create separated program name and vulnerabilities field from first line
                 if check:
+                    check_security()
                     scan["Program Name"] = key
                     scan["Security"] = value
                     check = False
@@ -105,34 +106,6 @@ class WebServer(BaseHTTPRequestHandler):
                     scan[key] = value
         check = True
         utils.remove_fields(scan)   # remove unuseful fields of clamav
-
-    def get_jmdav_data(self, report):
-        """ Extract and Parse the JMDav Data from the Global Report """
-
-        jmdav = utils.extract_information("<SUMMARY>", "<SUMMARY_END>", report)
-        splitcontent = jmdav.splitlines()
-        for line in splitcontent:
-            res = line.split(": ", 1)
-            if len(res) == 2:
-                key, value = res
-                print(value)
-                value.replace('\"', "")
-                print(value)
-                scan[key] = value
-
-    def get_rkhav_data(self, report):
-        """ Extract and Parse the Rkhav Data from the Global Report """
-
-        rkhav = utils.extract_information("<AV3_START>", "<AV3_END>", report)
-        splitcontent = rkhav.splitlines()
-        threats = list()
-        for line in splitcontent:
-            res = line.split("rootkit", 1)
-            if len(res) == 2:
-                key, value = res
-                threats.append(key + value)
-        scan["rootkit"] = list()
-        scan["rootkit"].extend(threats)
 
     def get_full_analysis(self, report, count):
         """ Extract the Extended Information from JMDav and Rkhav and writes into a txt file """
@@ -142,22 +115,30 @@ class WebServer(BaseHTTPRequestHandler):
         path2 = os.path.join(self.dir2, "analysis_" +
                              str(count) + "_" + prog_name + ".txt")
         scan["Details"] = path2
-        scan_list.append(scan.copy())
-        scan.clear()
         # save more details to file for download
-        tmp1 = utils.extract_information(
-            "<BINARY_ANALYSIS>", "<BINARY_ANALYSIS_END>", report)
-        tmp2 = utils.extract_information(
-            "<RKHunter_ANALYSIS>", "<END_RKHunter_ANALYSIS>", report)
+        tmp1 = utils.extract_information("<SUMMARY>", "<SUMMARY_END>", report)
+        tmp2 = utils.extract_information("<BINARY_ANALYSIS>", "<BINARY_ANALYSIS_END>", report)
+        tmp3 = utils.extract_information("<RKHunter_ANALYSIS>", "<END_RKHunter_ANALYSIS>", report)
+        # notify that there are other warnings if no malware was found
+        if not self.check_security(tmp1):
+            scan["Security"] = "WARNING"
         details = open(path2, 'w')
-        details.write(tmp1 + "\n\n" + tmp2)
+        details.write(tmp1 + "\n\n" + tmp2 + "\n\n" + tmp3)
         details.close()
-        count += 1
+
+    def check_security(self, tmp2):
+        content = tmp2.splitlines()
+        for line in content:
+            if "not_safe" in line:
+                return False
+        return True
+
 
 
 if __name__ == "__main__":
     print("Server starting...")
-    address = (ni.ifaddresses('enp0s3')[ni.AF_INET][0]['addr'], 80)
+    address = (ni.ifaddresses('macsec0')[ni.AF_INET][0]['addr'], 80)
+    #address = ("127.0.0.1", 8080)
     server = HTTPServer(address, WebServer)
     print(time.asctime(), "Start Server - %s:%s" % (address[0], address[1]))
     try:
