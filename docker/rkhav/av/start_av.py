@@ -1,9 +1,11 @@
 import socket
 from lib import comparator
 import os
+import time
 
 MALWARE_DIR = "av/quarantine/"
 REPORT_DIR = "av/reports/"
+
 CENTRAL_IP = "10.23.1.2"
 HOST_IP = "10.123.0.4"
 
@@ -19,6 +21,8 @@ SUMMARY_TAG = '<DIFF_SUMMARY>'
 END_SUMMARY_TAG = '<DIFF_SUMMARY_END>'
 ANALYSIS_TAG = '<RKHunter_ANALYSIS>'
 END_ANALYSIS_TAG = '<END_RKHunter_ANALYSIS>'
+
+CONGESTION_SLOWDOWN = 0.2  # Slowdown the upload rate to avoid Cisco7200 Congestion
 
 
 def analyze_file(file_path, file_name):
@@ -104,7 +108,7 @@ def start_listening():
         print('File has been received successfully.')
         file.close()
         con.close()
-        analyze_file(file_path, file_name, )
+        analyze_file(file_path, file_name)
 
 
 def send_file(file_path, file_name):
@@ -129,6 +133,7 @@ def send_file(file_path, file_name):
 
     # Keep sending data to the server
     while (line):
+        time.sleep(CONGESTION_SLOWDOWN)
         sock.send(line)
         line = file.read(1024)
 

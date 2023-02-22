@@ -5,7 +5,7 @@ ip addr add 10.123.0.4/16 dev eth0
 ip route add default via 10.123.0.1
 
 echo "Creating Baseline Report.."
-rm /var/log/rkhunter*
+rm /var/log/rkhunter* 2>/dev/null
 rkhunter --check --sk --nocolors > /var/log/rkhunter_baseline.log
 echo "Initialization Completed"
 

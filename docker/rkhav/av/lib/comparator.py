@@ -2,7 +2,7 @@ import difflib
 
 TO_EXCLUDE = 'The system checks took'
 MATCHES = ['[ Found ]', 'Warning']
-NO_DIFF = "RKHunter didn't detect any system changes made by the malware"
+NO_DIFF = "RKHunter didn't detect any system changes made by the malware\n"
 
 
 def compare_report(file1, file2):
