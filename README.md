@@ -38,3 +38,34 @@ Setup OpenVPN with one server and one client. The server is in AS200, with a pub
 - [Michele Salvatori](https://github.com/michsalvv): 0306362
 - [Danilo Dell'Orco](https://github.com/danilo-dellorco): 0300229
 - [Jacopo Fabi](https://github.com/jacopofabi): 0293870
+# Project Folder Structure
+ 
+ - **```gns-proj2```**
+   - Contains the GNS3 Project
+  
+ - **```docker```**
+   - Mantains the Dockerfiles and resources of all the containers images used in the projects
+   - Every subfolder contains the `.sh` scripts and all the files to configure the specific containers
+     - ```clamav | jmdav | rkhav ```
+       - ```av```: keeps all the scripts and files used by the av engine
+       - ```./start.sh```: start command used in `docker run`, to configure the container interfaces and start the antivirus service in background.
+     - ```openvpn```
+       - ```config```: keeps all the file used to configure openvpn
+       - ```script```: keeps the scripts used to configure the specific hosts
+     - ```simple-ubuntu```: Dockerfile to build an ubuntu container with some useful tools pre-installed.
+
+ - **```VMs```**
+   - Mantains all the files used in the virtual machines for configuration and services.
+   - Every subfolder contains the `.sh` scripts and all the files to configure the specific containers
+     - ```central-node```
+       - ```av```: keeps files and folders to execute the remote analysis
+       - ```./start.sh```: script to configure interfaces and start the listening service of the antivirus framework. 
+       - ```./downloader.sh```: script to download a malware from the [Our Malware Sample Repository](https://github.com/danilo-dellorco/malwares-sample)
+       - ```Scaricati```: default folder scanned by the antivirus, and in witch `downloader.sh` downloads the malware.
+
+     - ```web-server```
+       - ```details```: keeps analysis files that can be download by clients from the web page.
+       - ```scans```: keeps reports received from central node that are splitted and cleaned to fill html table and create analysis files stored in details.
+       - ```index.html```: default html web page.
+       - ```server.py```: program to launch web server and serve GET and PUT requests.
+       - ```utils.py```: keeps utility functions that helps with splitting and cleaning of reports.  

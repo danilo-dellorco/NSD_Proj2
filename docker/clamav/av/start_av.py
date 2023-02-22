@@ -1,5 +1,6 @@
 import socket
 import os
+import time
 
 MALWARE_DIR = "av/quarantine/"
 REPORT_DIR = "av/reports/"
@@ -9,6 +10,8 @@ HOST_IP = '10.123.0.2'
 
 REPORT_SUFFIX = "_REPav1.log"
 REPORT_PORT = 8801
+
+CONGESTION_SLOWDOWN = 0.15
 
 
 def analyze_file(file_path, file_name):
@@ -81,8 +84,7 @@ def send_file(file_path, file_name):
     # Send filename to the server, and wait for ACK to continue
     print("Filename:", file_name)
     sock.send(file_name.encode())
-    ack = sock.recv(2)
-    print(ack.decode())
+    sock.recv(2)
 
     # Read File in binary
     file = open(file_path, 'rb')
@@ -90,6 +92,7 @@ def send_file(file_path, file_name):
 
     # Keep sending data to the server
     while(line):
+        time.sleep(CONGESTION_SLOWDOWN)
         sock.send(line)
         line = file.read(1024)
 

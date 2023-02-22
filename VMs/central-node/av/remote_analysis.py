@@ -2,6 +2,7 @@ import threading
 import socket
 import os
 import sys
+import time
 import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox as mb
@@ -33,6 +34,8 @@ DIFF_SUMMARY_TAG = "<DIFF_SUMMARY>"
 DIFF_SUMMARY_ENDTAG = "<DIFF_SUMMARY_END>"
 START_TAGS = ["<AV1_START>", "<AV2_START>", "<AV3_START>"]
 END_TAGS = ["<AV1_END>", "<AV2_END>", "<AV3_END>"]
+
+CONGESTION_SLOWDOWN = 0.15
 
 lock_av1 = threading.Lock()
 lock_av2 = threading.Lock()
@@ -88,7 +91,8 @@ def send_file(file_path, file_name, dest_ip, rep_port):
     line = file.read(1024)
 
     # Keep sending data to the server
-    while (line):
+    while(line):
+        time.sleep(CONGESTION_SLOWDOWN)
         sock.send(line)
         line = file.read(1024)
 
@@ -96,7 +100,7 @@ def send_file(file_path, file_name, dest_ip, rep_port):
     sock.close()
     print(f'File has been transferred successfully to {dest_ip}.')
 
-    # Listening for Response only after Malware it's succesfully sent
+    # Listening for Report only after Malware it's succesfully sent
     start_listening(rep_port, lock)
     return 0
 
@@ -272,8 +276,7 @@ def upload_report_to_server(report):
     """ Send the aggregate report to the remote WebServers in LAN-A1"""
 
     f = open(report, 'rb')
-    requests.put('http://10.23.0.2:80', data=f.read())
-    requests.put('http://10.23.0.3:80', data=f.read())
+    requests.put('http://10.23.0.69:80', data=f.read())
     print("Analysis report sent to web servers.")
 
 
@@ -298,9 +301,14 @@ if __name__ == "__main__":
     lock_av2.acquire()
     lock_av3.acquire()
 
+    # Generates the aggregate reports, end evaluates if globally the file is dangerous or not
     aggregate_rep_path = aggregate_reports(file_name)
     make_decision(aggregate_rep_path, MALWARE_DIR+file_name, original_path)
     upload_report_to_server(aggregate_rep_path)
 
     # Clean Local Reports
     os.system("/bin/rm av/reports/*")
+
+    lock_av1.release()
+    lock_av2.release()
+    lock_av3.release()
