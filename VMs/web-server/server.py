@@ -98,7 +98,6 @@ class WebServer(BaseHTTPRequestHandler):
                 key, value = res
                 # create separated program name and vulnerabilities field from first line
                 if check:
-                    check_security()
                     scan["Program Name"] = key
                     scan["Security"] = value
                     check = False
@@ -117,8 +116,10 @@ class WebServer(BaseHTTPRequestHandler):
         scan["Details"] = path2
         # save more details to file for download
         tmp1 = utils.extract_information("<SUMMARY>", "<SUMMARY_END>", report)
-        tmp2 = utils.extract_information("<BINARY_ANALYSIS>", "<BINARY_ANALYSIS_END>", report)
-        tmp3 = utils.extract_information("<RKHunter_ANALYSIS>", "<END_RKHunter_ANALYSIS>", report)
+        tmp2 = utils.extract_information(
+            "<BINARY_ANALYSIS>", "<BINARY_ANALYSIS_END>", report)
+        tmp3 = utils.extract_information(
+            "<RKHunter_ANALYSIS>", "<END_RKHunter_ANALYSIS>", report)
         # notify that there are other warnings if no malware was found
         if not self.check_security(tmp1):
             scan["Security"] = "WARNING"
@@ -132,7 +133,6 @@ class WebServer(BaseHTTPRequestHandler):
             if "not_safe" in line:
                 return False
         return True
-
 
 
 if __name__ == "__main__":
