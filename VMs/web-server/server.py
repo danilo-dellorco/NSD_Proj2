@@ -60,8 +60,6 @@ class WebServer(BaseHTTPRequestHandler):
             output = "file open error"
             self.send_error(404, output)
 
-    # fill html template with scan reports
-
     def update_html(self):
         """ Updates the HTML Web Page scanning the report folders, and parsing it into a Table """
 
@@ -84,6 +82,7 @@ class WebServer(BaseHTTPRequestHandler):
         htmlfile = open(self.updated, 'w')
         htmlfile.write(result_template2.render(scan_list=scan_list))
         htmlfile.close()
+        scan_list.clear()
         print("HTML report generated.\n")
 
     def get_clamav_data(self, report, check):
@@ -117,14 +116,12 @@ class WebServer(BaseHTTPRequestHandler):
                              str(count) + "_" + prog_name + ".txt")
         scan["Details"] = path2
         # save more details to file for download
-        tmp1 = utils.extract_information(
-            "<SUMMARY>", "<SUMMARY_END>", report)
-        tmp2 = utils.extract_information(
-            "<BINARY_ANALYSIS>", "<BINARY_ANALYSIS_END>", report)
-        if not self.check_security(tmp2):
-            scan["Security"] = "WARNING!!!"
-        tmp3 = utils.extract_information(
-            "<RKHunter_ANALYSIS>", "<END_RKHunter_ANALYSIS>", report)
+        tmp1 = utils.extract_information("<SUMMARY>", "<SUMMARY_END>", report)
+        tmp2 = utils.extract_information("<BINARY_ANALYSIS>", "<BINARY_ANALYSIS_END>", report)
+        tmp3 = utils.extract_information("<RKHunter_ANALYSIS>", "<END_RKHunter_ANALYSIS>", report)
+        # notify that there are other warnings if no malware was found
+        if not self.check_security(tmp1):
+            scan["Security"] = "WARNING"
         details = open(path2, 'w')
         details.write(tmp1 + "\n\n" + tmp2 + "\n\n" + tmp3)
         details.close()
