@@ -6,7 +6,10 @@
 - [Danilo Dell'Orco](https://github.com/danilo-dellorco): 0300229
 
 ## Project Folder Structure
- 
+
+ - **```documentation```**
+   - Contains the detailed report of the project
+
  - **```gns-proj2```**
    - Contains the GNS3 Project
   
