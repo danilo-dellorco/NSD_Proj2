@@ -8,7 +8,6 @@ from tkinter import messagebox as mb
 from functools import partial
 import requests
 
-
 # Defining Directories
 MALWARE_DIR = "av/quarantine/"
 REPORT_DIR = "av/reports/"
@@ -89,7 +88,7 @@ def send_file(file_path, file_name, dest_ip, rep_port):
     line = file.read(1024)
 
     # Keep sending data to the server
-    while(line):
+    while (line):
         sock.send(line)
         line = file.read(1024)
 
@@ -128,7 +127,7 @@ def start_listening(port, lock):
     # Keep receiving data from the client
     line = con.recv(1024)
 
-    while(line):
+    while (line):
         file.write(line)
         line = con.recv(1024)
 
