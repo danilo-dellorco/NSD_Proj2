@@ -38,20 +38,12 @@
        - ```utils.py```: keeps utility functions that helps with splitting and cleaning of reports.  
 
  - **```scripts```**
-   - Mantains all the files used in the virtual machines for configuration and services.
-   - Every subfolder contains the `.sh` scripts and all the files to configure the specific containers
-     - ```central-node```
-       - ```av```: keeps files and folders to execute the remote analysis
-       - ```./start.sh```: script to configure interfaces and start the listening service of the antivirus framework. 
-       - ```./downloader.sh```: script to download a malware from the [Our Malware Sample Repository](https://github.com/danilo-dellorco/malwares-sample)
-       - ```Scaricati```: default folder scanned by the antivirus, and in witch `downloader.sh` downloads the malware.
-
-     - ```web-server```
-       - ```details```: keeps analysis files that can be download by clients from the web page.
-       - ```scans```: keeps reports received from central node that are splitted and cleaned to fill html table and create analysis files stored in details.
-       - ```index.html```: default html web page.
-       - ```server.py```: program to launch web server and serve GET and PUT requests.
-       - ```utils.py```: keeps utility functions that helps with splitting and cleaning of reports.  
+   - Mantains all the configuraton files for routers, hosts and services.
+   - Every subfolder contains the `.sh` scripts and all the files to configure the specific device
+     - ```CEs```: keeps all the scripts used to configure the Client-Edges
+     - ```firewalls```: keeps the scripts for firewalls startups
+     - ```hosts```: keeps scripts to setup MACsec secure channel in LAN-A1
+     - ```routers```: keeps all the configuration files for Cisco Routers
 
 ## Specification
 ![](.img/topology.png)
