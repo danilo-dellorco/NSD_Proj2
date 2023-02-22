@@ -54,7 +54,7 @@
        - ```utils.py```: keeps utility functions that helps with splitting and cleaning of reports.  
 
 ## Specification
-![](DOcumentation/topology.png)
+![](.img/topology.png)
 
 In this project, there are 2 Autonomous Systems that provide network connectivity to five private networks. AS100 provides a BGP/MPLS VPN service for the three sites of VPN A. AS200 is a customer of AS100 and hosts an OpenVPN server with a public IP address, used to provide an overlay VPN for the VPN client in LAN-B1.
 
