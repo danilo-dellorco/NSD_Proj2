@@ -36,10 +36,8 @@ In the central node, setup an external internet connection through a VirtualBox 
        - ```Scaricati```: default folder scanned by the antivirus, and in witch `downloader.sh` downloads the malware.
 
      - ```web-server```
-       - ```details```: keeps files and folders to execute the remote analysis
-       - ```scans```: script to configure interfaces and start the listening service of the antivirus framework. 
-       - ```hostA1.sh```: script to download a malware from the [Our Malware Sample Repository](https://github.com/danilo-dellorco/malwares-sample)
-       - ```hostA2.sh```: default folder scanned by the antivirus, and in witch `downloader.sh` downloads the malware.  
-       - ```index.html```: default folder scanned by the antivirus, and in witch `downloader.sh` downloads the malware.  
-       - ```server.py```: default folder scanned by the antivirus, and in witch `downloader.sh` downloads the malware.  
-       - ```utils.py```: default folder scanned by the antivirus, and in witch `downloader.sh` downloads the malware.  
+       - ```details```: keeps analysis files that can be download by clients from the web page.
+       - ```scans```: keeps reports received from central node that are splitted and cleaned to fill html table and create analysis files stored in details.
+       - ```index.html```: default html web page.
+       - ```server.py```: program to launch web server and serve GET and PUT requests.
+       - ```utils.py```: keeps utility functions that helps with splitting and cleaning of reports.  
